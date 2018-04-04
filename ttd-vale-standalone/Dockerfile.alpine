@@ -1,0 +1,23 @@
+FROM golang:1.10-alpine
+LABEL maintainer "Sven <sven@testthedocs.org>" \
+    org.label-schema.vendor = "TestTheDocs"
+
+RUN builddeps=' \
+    git \
+    ' \
+    && adduser -s /bin/false -D -H ttd \
+    && apk --no-cache add \
+    $builddeps \
+    tini \
+    py-docutils \
+    pandoc \
+    su-exec \
+    && go get github.com/ValeLint/vale \
+    && apk del --purge $builddeps
+
+VOLUME ["/build/"]
+
+WORKDIR /build/docs
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
