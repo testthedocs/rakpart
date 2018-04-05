@@ -1,8 +1,16 @@
 # Changelog
 
+## 1.0
+
+### New
+
+* Update OS version [svx]
+* Update Vale verion [svx]
+* Remove default checks, you need to have your own vale setup configured [svx]
+
 ## 0.0.5
 
-## New
+### New
 
 * Add TTD.WordUsage, error on Github and suggest GitHub [svx]
 
