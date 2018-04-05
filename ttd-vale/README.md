@@ -8,6 +8,7 @@ Debain Based Docker Container For Running Style Guide Checks Based On [Vale](htt
 ## Dependencies
 
 - [Docker](https://docker.com "Homepage of docker")
+- A working [Vale configuration](https://valelint.github.io/docs/config/) in your ``/docs` directory
 
 ## Installation
 
