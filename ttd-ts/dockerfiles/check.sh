@@ -5,6 +5,7 @@ set -e
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
 COL_YELLOW=$ESC_SEQ"33;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
 COL_RED=$ESC_SEQ"31;01m"
 
 # Functions
@@ -24,7 +25,7 @@ check_tabs() {
         echo -en "$COL_RED Thank you ! $COL_RESET\n"
         exit 1
     else
-        echo -en "$COL_YELLOW Looks good ! :)$COL_RESET\n"
+        echo -en "$COL_GREEN Looks good ! :)$COL_RESET\n"
     fi
 }
 
