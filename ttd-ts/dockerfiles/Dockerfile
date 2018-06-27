@@ -14,7 +14,7 @@ VOLUME ["/build/docs"]
 WORKDIR /build/docs
 
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY dockerfiles/testts.sh /usr/local/bin/testts.sh
+COPY dockerfiles/check.sh /usr/local/bin/check.sh
 
 #ENTRYPOINT ["bash"]
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
