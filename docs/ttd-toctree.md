@@ -10,10 +10,6 @@ Following our write guidelines we allow this setting once in index.rst.
 
 This tests checks all reStructuredText (`.rst`) files, if the test detects `:numbered:` in another file than `index.rst` it will report an error.
 
-## Dependencies
-
-- [Docker](https://docker.com "Homepage of docker")
-
 ## Installation
 
 Pull the image:
@@ -21,6 +17,10 @@ Pull the image:
 ```console
 docker pull testthedocs/ttd-toctree
 ```
+
+### Dependencies
+
+- [Docker](https://docker.com "Homepage of docker")
 
 ## Usage
 

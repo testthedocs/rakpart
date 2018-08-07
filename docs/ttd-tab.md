@@ -4,10 +4,6 @@
 
     Checking And Reporting Tabs.
 
-## Dependencies
-
-- [Docker](https://docker.com "Homepage of docker")
-
 ## Installation
 
 Pull the image:
@@ -15,6 +11,10 @@ Pull the image:
 ```console
 docker pull testthedocs/ttd-tab
 ```
+
+### Dependencies
+
+- [Docker](https://docker.com "Homepage of docker")
 
 ## Usage
 
