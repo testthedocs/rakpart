@@ -48,7 +48,9 @@ workflows:
   btd:
     jobs:
       - "markdown lint"
-      - "generate docs"
+      - "generate docs":
+           requires:
+            - "markdown lint"
       - "deploy site":
            requires:
              - "generate docs"
