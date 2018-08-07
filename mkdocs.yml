@@ -25,7 +25,7 @@ copyright: 'Copyright &copy; 2018 - TTD Community'
 
 # Page tree
 pages:
-  - Home: index.md
+  - About: index.md
   - Tests:
     - Trailing Spaces: ttd-ts.md
     - Toctree: ttd-toctree.md
