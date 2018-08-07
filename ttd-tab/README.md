@@ -2,7 +2,6 @@
 
 Containerised application for checking trailing spaces on line ends.
 
-
 ## Features
 
 - Small Image, based on [Alpine Linux](http://www.alpinelinux.org/).
@@ -22,18 +21,22 @@ Full documentation for end users can be found in the ["docs"](docs) folder.
 
 Pull the image:
 
-```
-docker pull testthedocs/ttd-ttd
+```consile
+docker pull testthedocs/ttd-tab
 ```
 
-## Example
+## Usage
 
-![example](docs/_static/ttd-tab-screen.png)
+Run `ttd-tab` from in your docs directory:
+
+```console
+docker run -it -v `pwd`:/build/docs testthedocs/ttd-tab:latest
+```
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/testthedocs/ttd-tab/issues)
-- [Source Code](https://github.com/testthedocs/ttd-tab)
+- [Issue Tracker](https://github.com/testthedocs/rakpart/issues)
+- [Source Code](https://github.com/testthedocs/rakpart)
 
 ## Support
 
