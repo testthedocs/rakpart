@@ -20,3 +20,6 @@ You can change the config, by changing `config.json`, currenlty we ignore:
 ```console
 docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-mdlint
 ```
+## Source Code
+
+The code of `tts-mdlint` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-mdlint).

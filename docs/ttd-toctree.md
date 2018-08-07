@@ -33,3 +33,7 @@ docker run -it -v `pwd`:/build/docs testthedocs/ttd-toctree
 ```
 
 ![A Gif with example](images/ttd-testtoc.gif)
+
+## Source Code
+
+The code of `tts-toctree` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-toctree).
