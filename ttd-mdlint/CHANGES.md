@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+
+- Add .dockerignore [svx]
+
 ## 0.0.3
 
 - Allow inline HTML (MD033) [svx]
