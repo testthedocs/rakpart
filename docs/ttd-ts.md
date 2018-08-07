@@ -31,3 +31,7 @@ The script will report if it detects trailing spaces on line ends, if so it will
 ![Example with errors](images/ttd-ts-screen.png)
 
 ![Example with no errors](images/ttd-ts-ok.png)
+
+## Source Code
+
+The code of `tts-ts` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-ts)
