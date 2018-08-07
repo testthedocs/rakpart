@@ -1,0 +1,22 @@
+version: 2.0
+
+defaults: &defaults
+  working_directory: ~/build
+
+jobs:
+  "markdown lint":
+    docker:
+      - image: testthedocs/ttd-mdlint
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Run Markdown Lint
+          command: |
+            markdownlint --config /srv/config.json /srv/docs
+
+workflows:
+  version: 2
+  btd:
+    jobs:
+      - "markdown lint"

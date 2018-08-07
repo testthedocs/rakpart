@@ -15,8 +15,40 @@ jobs:
           command: |
             markdownlint --config /srv/config.json /srv/docs
 
+  "generate docs":
+    docker:
+      - image: wundertax/mkdocs
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Generate Documentation
+          command: |
+            mkdocs build
+
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - build/site
+
+  "deploy site":
+    docker:
+      - image: testthedocs/ttd-zipcurl
+    #<<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/build/html
+      - run:
+          command: |
+              .circleci/deploy.sh
+
 workflows:
   version: 2
   btd:
     jobs:
       - "markdown lint"
+      - "generate docs"
+      - "deploy site":
+           requires:
+             - "generate docs"
