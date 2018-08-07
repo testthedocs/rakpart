@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/testthedocs/rakpart.svg?style=svg)](https://circleci.com/gh/testthedocs/rakpart)
-[![Live Docs](https://img.shields.io/badge/view-live%20docs-blue.svg)](https://rakpart.testthedocs.org)
+[![Live Docs](https://img.shields.io/badge/view-live%20docs-blue.svg)](https://pedantic-ritchie-166766.netlify.com/)
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/testthedocs/Lobby)
 
 # Rakpart
