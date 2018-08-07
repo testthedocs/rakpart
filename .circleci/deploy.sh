@@ -5,7 +5,7 @@ echo "packing"
 zip -r website.zip ~/build/html/build/site/
 echo "done with zip"
 
-NETLIFY_SITE_NAME=pedantic-ritchie-166766/
+NETLIFY_SITE_NAME=pedantic-ritchie-166766.netlify.com
 
 echo " lets start with uploading"
 
