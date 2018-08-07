@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Run Markdown Lint
           command: |
-            markdownlint --config /srv/config.json build/docs/
+            markdownlint --config /srv/config.json docs/
 
   "generate docs":
     docker:
