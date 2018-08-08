@@ -11,7 +11,6 @@ RUN adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
     tini \
     su-exec \
-    #bash \
     && wget -O vale.tgz https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz \
     && tar zxvf vale.tgz \
     && mv vale /usr/local/bin/vale \
