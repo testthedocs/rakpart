@@ -1,4 +1,6 @@
-We want a tool that a user can run locally (in the future, the potential for a remote service that is instead triggered locally by a command or a Git push). This tool packages a number of opinionated tests that give an indication of documentation qusality, including structral and linguistic checks.
+# Rakpart and redaktor
+
+We want a tool that a user can run locally, and in the future, as a remote service that is triggered locally by a command or a Git push. This tool packages a number of opinionated tests that give an indication of documentation qusality, including structral and linguistic checks.
 
 The tool is a wrapper that triggers a number of tests that run in containers, those containers provide output, and the tool then processes those outputs into something more readbale and provides an indication of the overall docs quality. In the future, the hosted service will also provide a badge that indoicates this.
 
@@ -73,12 +75,11 @@ We use vale, with the folloiwng configured:
 - [Avoid](https://github.com/errata-ai/vale/blob/master/styles/MailChimp/Avoid.yml)
 - [Negative](https://github.com/errata-ai/vale/blob/master/styles/MailChimp/Negative.yml)
 - [List start](https://github.com/errata-ai/vale/blob/master/styles/OpenStack/ListStart.yml)
-- [Guys](https://github.com/errata-ai/vale/blob/master/styles/Pedantic/Guys.yaml)
+- [Guys](https://github.com/errata-ai/vale/blob/master/styles/Pedantic/Guys.yml)
 - [Terms](https://github.com/errata-ai/vale/blob/master/styles/Pedantic/Terms.yml)
 - [Complex](https://github.com/errata-ai/vale/blob/master/styles/PlainLanguage/ComplexWords.yml)
-- [PassiveVoice](https://github.com/errata-ai/vale/blob/master/styles/PlainLanguage/PassiveVoice.yml)
 - [UnclearAntecedent](/ttd-vale/vale-styles/ttd/UnclearAntecedent.yml)
-- [FutureTense](ttd-vale/vale-styles/ttd/UnclearAntecedent.yml)
+- [FutureTense](ttd-vale/vale-styles/ttd/FutureTense.yml)
 - [HeadingStartsWithCapital](https://github.com/errata-ai/vale/blob/master/styles/demo/HeadingStartsWithCapital.yml)
 - [EndingPreposition](https://github.com/errata-ai/vale/blob/master/styles/demo/EndingPreposition.yml)
 - [ParagraphLength](https://github.com/errata-ai/vale/blob/master/styles/demo/ParagraphLength.yml)

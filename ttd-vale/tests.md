@@ -1,8 +1,8 @@
 ## heading
 
-TODO: Warn me about this 
+TODO: Warn me about this
 
-Colour
+Hey guys!
 
 eg this workman is a very common cliche.
 
