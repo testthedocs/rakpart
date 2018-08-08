@@ -21,4 +21,4 @@ RUN adduser -s /bin/false -D -H ttd \
 VOLUME /src
 WORKDIR /src
 
-ENTRYPOINT [ "vale" ]
+ENTRYPOINT [ "/sbin/tini", "--", "/usr/local/bin/entrypoint.sh" ]
