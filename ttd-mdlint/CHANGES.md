@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+
+- Disable MD044 [svx]
+
 ## 0.0.4
 
 - Add .dockerignore [svx]

@@ -14,6 +14,7 @@ You can change the config, by changing `config.json`, currenlty we ignore:
 
 - [MD013](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013)
 - [MD033](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033)
+- [MD044](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md044)
 
 ## Usage
 
