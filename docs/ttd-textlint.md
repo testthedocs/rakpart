@@ -39,4 +39,4 @@ If you have any validation `ttd-textlint` will report them.
 
 ## Source Code
 
-The code of `ttd-mdlint` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-mdlint).
+The code of `ttd-textlint` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-textlint).
