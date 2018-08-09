@@ -33,6 +33,7 @@ RUN adduser -s /bin/false -D -H ttd \
     && rm LICENSE \
     && rm README.md
 
+WORKDIR /srv
 VOLUME /srv
 
 #ENTRYPOINT [ "bash" ]
