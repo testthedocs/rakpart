@@ -14,7 +14,7 @@ None.
 
 ## Usage
 
-  If ttd-ts can not find an _index.rst_ the test fails.
+If ttd-ts can not find an _index.rst_ the test fails.
 
 The following example mounts your current working directory into the container and runs the check:
 
