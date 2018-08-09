@@ -4,21 +4,17 @@
 
     Check your `rst` based documentation for trailing spaces on line ends.
 
-## Installation
+## Dependencies
 
-### Dependencies
+None.
 
-- [reStructuredText](http://docutils.sourceforge.net/rst.html)
-- `index.rst`
-- [Docker](https://www.docker.com/)
+## Configuration
 
-```console
-docker pull testthedocs/ttd-ts
-```
+None.
 
 ## Usage
 
-If ttd-ts can not find a index.rst the test will fail.
+If ttd-ts can not find an _index.rst_ the test fails.
 
 The following example mounts your current working directory into the container and runs the check:
 
@@ -26,7 +22,7 @@ The following example mounts your current working directory into the container a
 docker run -t -v `pwd`:/build/docs testthedocs/ttd-ts
 ```
 
-The script will report if it detects trailing spaces on line ends, if so it will show the name of the file and the number of issues.
+The script reports if it detects trailing spaces on line ends, and shows the name of the file and the number of issues.
 
 ![Example with errors](images/ttd-ts-screen.png)
 

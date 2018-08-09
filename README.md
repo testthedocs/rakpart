@@ -4,9 +4,7 @@
 
 # Rakpart
 
-Quay for documentation test Docker images. The Test the Docs project creates opinionated defaults based on our experiences, but we are aware that everyone has different requirements. Each folder has a DockerFile, other files it needs, and documentation explaining what the test does, why, and how you can change it.
-
-- [ttd-vale](ttd-vale)
+Quay for documentation test Docker images. The Test the Docs project creates opinionated defaults based on our experiences, but we are aware that everyone has different requirements. Each folder has a DockerFile, other files it needs, and you can find further documentation [here](https://pedantic-ritchie-166766.netlify.com/).
 
 ## Contributing
 
