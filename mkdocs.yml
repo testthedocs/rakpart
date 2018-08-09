@@ -33,4 +33,5 @@ pages:
     - Markdown Lint: ttd-mdlint.md
     - HTMLTest: ttd-htmltest.md
     - Textlint: ttd-textlint.md
+    - Vale: ttd-vale.md
   - Contributing: contributing.md
