@@ -27,7 +27,6 @@ ttd-textlint expects a configuration file called ``.textlintrc``
 
 For more info, please read the [documentation about configuring textlint](https://github.com/textlint/textlint/blob/master/docs/configuring.md).
 
-
 ## Usage
 
 ```console
