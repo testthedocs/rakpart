@@ -32,4 +32,5 @@ pages:
     - Tab: ttd-tab.md
     - Markdown Lint: ttd-mdlint.md
     - HTMLTest: ttd-htmltest.md
+    - Textlint: ttd-textlint.md
   - Contributing: contributing.md
