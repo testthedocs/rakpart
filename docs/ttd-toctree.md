@@ -6,29 +6,21 @@
 
 This test checks for multiple `:numbered:` entries.
 
-Following our write guidelines we allow this setting once in index.rst.
+This tests checks all reStructuredText (`.rst`) files, if the test detects `:numbered:` in another file than `index.rst` it reports an error.
 
-This tests checks all reStructuredText (`.rst`) files, if the test detects `:numbered:` in another file than `index.rst` it will report an error.
+## Dependencies
 
-## Installation
+None.
 
-Pull the image:
+## Configuration
 
-```console
-docker pull testthedocs/ttd-toctree
-```
-
-### Dependencies
-
-- [Docker](https://docker.com "Homepage of docker")
+None.
 
 ## Usage
 
 Navigate to the directory containing your reStructuredText (.rst) files.
 
-### Run The Test
-
-``` console
+```console
 docker run -it -v `pwd`:/build/docs testthedocs/ttd-toctree
 ```
 
