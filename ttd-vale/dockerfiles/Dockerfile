@@ -9,7 +9,7 @@ RUN apk --no-cache add \
     git \
     ca-certificates \
     bash \
-    && git clone https://github.com/errata-ai/vale.git
+    && git clone https://github.com/testthedocs/vale-styles.git
 
 FROM alpine:3.8
 
@@ -18,18 +18,8 @@ LABEL maintainer "Sven <sven@testthedocs.org>" \
 
 ENV VALE_VERSION 0.11.2
 
-COPY --from=builder /srv/vale/styles/MailChimp /srv/vale-styles/MailChimp
-COPY --from=builder /srv/vale/rule/vale /srv/vale-styles/vale
-COPY --from=builder /srv/vale/rule/write-good /srv/vale-styles/write-good
-COPY --from=builder /srv/vale/rule/proselint /srv/vale-styles/proselint
-COPY --from=builder /srv/vale/styles/18F /srv/vale-styles/18F
-COPY --from=builder /srv/vale/styles/OpenStack /srv/vale-styles/OpenStack
-COPY --from=builder /srv/vale/styles/Pedantic /srv/vale-styles/Pedantic
-COPY --from=builder /srv/vale/styles/PlainLanguage /srv/vale-styles/PlainLanguage
-COPY --from=builder /srv/vale/styles/demo /srv/vale-styles/demo
-COPY vale-styles/ttd /srv/vale-styles/ttd
+COPY --from=builder /srv/vale-styles /srv/vale-styles
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
-#COPY vale-styles /src/vale-styles
 COPY .vale.ini /srv/.vale.ini
 
 RUN adduser -s /bin/false -D -H ttd \

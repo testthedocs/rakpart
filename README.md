@@ -4,7 +4,9 @@
 
 # Rakpart
 
-Quay for our documentation tests.
+Quay for documentation test Docker images. The Test the Docs project creates opinionated defaults based on our experiences, but we are aware that everyone has different requirements. Each folder has a DockerFile, other files it needs, and documentation explaining what the test does, why, and how you can change it.
+
+- [ttd-vale](ttd-vale)
 
 ## Contributing
 
@@ -12,7 +14,7 @@ Pull requests are welcome.
 
 For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Please make sure to update tests and documentation as appropriate.
 
 ## License
 
