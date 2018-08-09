@@ -1,33 +1,49 @@
-FROM debian:latest
+FROM alpine:3.8 as builder
+
 LABEL maintainer "Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor = "TestTheDocs" \
-    vale_version=$VALE_VERSION
+    org.label-schema.vendor = "TestTheDocs"
 
-ENV VALE_VERSION 0.11.0
+WORKDIR /srv
 
-RUN builddeps=' \
-    curl \
-    tar \
+RUN apk --no-cache add \
+    git \
     ca-certificates \
-    ' \
-    && useradd --system -s /bin/false ttd \
-    && apt update && apt install -y --no-install-recommends \
-    $builddeps \
-    python-docutils \
-    gosu \
-    && curl --silent --show-error --fail --location \
-    --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-    "https://github.com/ValeLint/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz" \
-    | tar --no-same-owner -C /usr/local/bin -xz vale \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    bash \
+    && git clone https://github.com/errata-ai/vale.git
 
-VOLUME ["/build/"]
+FROM alpine:3.8
 
-WORKDIR /build/docs
+LABEL maintainer "Sven <sven@testthedocs.org>" \
+    org.label-schema.vendor = "TestTheDocs"
 
+ENV VALE_VERSION 0.11.2
+
+COPY --from=builder /srv/vale/styles/MailChimp /srv/vale-styles/MailChimp
+COPY --from=builder /srv/vale/rule/vale /srv/vale-styles/vale
+COPY --from=builder /srv/vale/rule/write-good /srv/vale-styles/write-good
+COPY --from=builder /srv/vale/rule/proselint /srv/vale-styles/proselint
+COPY --from=builder /srv/vale/styles/18F /srv/vale-styles/18F
+COPY --from=builder /srv/vale/styles/OpenStack /srv/vale-styles/OpenStack
+COPY --from=builder /srv/vale/styles/Pedantic /srv/vale-styles/Pedantic
+COPY --from=builder /srv/vale/styles/PlainLanguage /srv/vale-styles/PlainLanguage
+COPY --from=builder /srv/vale/styles/demo /srv/vale-styles/demo
+COPY vale-styles/ttd /srv/vale-styles/ttd
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
+#COPY vale-styles /src/vale-styles
+COPY .vale.ini /srv/.vale.ini
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+RUN adduser -s /bin/false -D -H ttd \
+    && apk --no-cache add \
+    tini \
+    su-exec \
+    bash \
+    && wget -O vale.tgz https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz \
+    && tar zxvf vale.tgz \
+    && mv vale /usr/local/bin/vale \
+    && rm LICENSE \
+    && rm README.md
 
-#https://github.com/ValeLint/vale/releases/download/v0.11.0/vale_0.11.0_Linux_64-bit.tar.gz
+VOLUME /srv
+
+ENTRYPOINT [ "bash" ]
+#ENTRYPOINT [ "/sbin/tini", "--", "/usr/local/bin/entrypoint.sh" ]
