@@ -19,6 +19,10 @@ Custom setup of [textlint](https://textlint.github.io/) in a Alpine container.
 - Uses [Tini](https://github.com/krallin/tini) as `init`.
 - Uses [su-exec](https://github.com/ncopa/su-exec) for setting user permissions.
 
+## Documentation
+
+Full documentation for end users can be found in the ["docs"](..docs/) folder.
+
 ## Dependencies
 
 - [Docker](https://docker.com "Homepage of docker")
@@ -26,14 +30,6 @@ Custom setup of [textlint](https://textlint.github.io/) in a Alpine container.
 ## Installation
 
 Pull the container from Docker Hub
-
-```
-docker pull testthedocs/ttd-textlint
-```
-
-## Updating
-
-Use *docker pull* to update to the latest version.
 
 ```
 docker pull testthedocs/ttd-textlint
@@ -64,9 +60,13 @@ For more info, please read the [documentation about configuring textlint](https:
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/testthedocs/ttd-textlint/issues)
-- [Source Code](https://github.com/testthedocs/ttd-textlint)
+- [Issue Tracker](https://github.com/testthedocs/rakpart/issues)
+- [Source Code](https://github.com/testthedocs/rakpart/tree/master/ttd-textlint)
 
 ## Support
 
 If you are having issues, please let us know.
+
+## License
+
+The project is licensed under the GPLv2.

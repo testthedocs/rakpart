@@ -12,7 +12,7 @@ Containerised application for checking trailing spaces on line ends.
 
 ## Documentation
 
-Full documentation for end users can be found in the ["docs"](docs) folder.
+Full documentation for end users can be found in the ["docs"](..docs/) folder.
 
 ## Dependencies
 
@@ -30,10 +30,18 @@ docker pull testthedocs/ttd-ts
 
 ![example](docs/_static/ttd-ts-screen.png)
 
+## Usage
+
+Run `ttd-ts` from in your docs directory:
+
+```console
+docker run -it -v `pwd`:/build/docs testthedocs/ttd-ts:latest
+```
+
 ## Contribute
 
-- [Issue Tracker](https://github.com/testthedocs/ttd-ts/issues)
-- [Source Code](https://github.com/testthedocs/ttd-ts)
+- [Issue Tracker](https://github.com/testthedocs/rakpart/issues)
+- [Source Code](https://github.com/testthedocs/rakpart/tree/master/ttd-ts)
 
 ## Support
 

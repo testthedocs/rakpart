@@ -1,4 +1,5 @@
 # ttd-toctree
+
 QA Test (Toctree Validation) For Sphinx Based Documentation
 
 This test checks for multiple `:numbered:` entries.
@@ -16,6 +17,10 @@ This tests checks all reStructuredText (.rst) files, if the test detects
 - Uses [su-exec](https://github.com/ncopa/su-exec) for setting permissions.
 - Uses [The Silver Searcher](https://geoff.greer.fm/ag/) for speed and better configuration.
 
+## Documentation
+
+Full documentation for end users can be found in the ["docs"](..docs/) folder.
+
 ## Dependencies
 
 - [Docker](https://docker.com "Homepage of docker")
@@ -27,7 +32,6 @@ Pull the image:
 ```
 docker pull testthedocs/ttd-toctree
 ```
-
 
 ## Usage
 
@@ -43,8 +47,8 @@ docker run -it -v `pwd`:/build/docs testthedocs/ttd-toctree
 
 ## Contribute
 
-- [Issue Tracker](github.com/testthedocs/ttd-toctree/issues)
-- [Source Code](github.com/testthedocs/ttd-toctree)
+- [Issue Tracker](github.com/testthedocs/rakpart/issues)
+- [Source Code](https://github.com/testthedocs/rakpart/tree/master/ttd-toctree)
 
 ## Support
 

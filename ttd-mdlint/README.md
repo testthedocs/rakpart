@@ -2,23 +2,41 @@
 
 Markdown Linter In A Container.
 
+## Features
 
 Based on: https://github.com/DavidAnson/markdownlint and https://github.com/dcycle/docker-markdown-lint
-
 Another great alternative is: https://github.com/remarkjs/remark-lint
 
-## Configuration
+## Documentation
 
-You can change the config, by changing `confog.json`, currenlty we ignore:
+Full documentation for end users can be found in the ["docs"](..docs/) folder.
 
-- [MD013](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013)
-- [MD033](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033)
-- [MD044](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md044)
+## Dependencies
 
-You can change the config, by changing `confog.json`, currenlty we ignore https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013
+- [Docker](https://docker.com "Homepage of docker")
+
+## Installation
+
+Pull the image:
+
+```
+docker pull testthedocs/ttd-mdlint
+```
 
 ## Usage
 
 ``` console
 docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-mdlint
-````
+```
+## Contribute
+
+- [Issue Tracker](https://github.com/testthedocs/rakpart/issues)
+- [Source Code](https://github.com/testthedocs/rakpart/tree/master/ttd-mdlint)
+
+## Support
+
+If you are having issues, please let us know.
+
+## License
+
+The project is licensed under the GPLv2.

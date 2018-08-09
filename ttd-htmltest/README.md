@@ -1,9 +1,14 @@
 # ttd-htmltest
+
 Debain Based Docker Container For Running HTML Checks Based On [htmltest](https://github.com/wjdp/htmltest)
 
 ## Features
 
-- Runs HTMLchecks against documentation
+- Runs HTMLchecks against documentation.
+
+## Documentation
+
+Full documentation for end users can be found in the ["docs"](..docs/) folder.
 
 ## Dependencies
 
@@ -16,7 +21,6 @@ Pull the image:
 ```
 docker pull testthedocs/ttd-htmltest
 ```
-
 
 ## Usage
 
@@ -38,8 +42,8 @@ docker run -it -v `pwd`:/build/docs testthedocs/ttd-htmltest
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/testthedocs/ttd-htmltest/issues)
-- [Source Code](https://github.com/testthedocs/ttd-htmltest)
+- [Issue Tracker](https://github.com/testthedocs/rakpart/issues)
+- [Source Code](https://github.com/testthedocs/rakpart/tree/master/ttd-htmltest)
 
 ## Support
 
