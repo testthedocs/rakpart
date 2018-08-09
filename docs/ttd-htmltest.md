@@ -20,8 +20,6 @@ If you use a different setup, you have to create your own ``.html.yml``.
 
 You can find more information in the [htmltest repository](https://github.com/wjdp/htmltest).
 
-## Usage
-
 ```console
 docker run -it -v `pwd`:/build/docs testthedocs/ttd-htmltest
 ```
