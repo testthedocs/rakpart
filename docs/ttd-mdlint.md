@@ -22,6 +22,10 @@ You can change the config, by changing `config.json`, currenlty we ignore:
 docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-mdlint
 ```
 
+If you have any validations `ttd-mdlint` will report them.
+§
+![ttd-mdlint](images/ttd-mdlint.png "ttd-mdlint example")
+
 ## Source Code
 
-The code of `tts-mdlint` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-mdlint).
+The code of `ttd-mdlint` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-mdlint).
