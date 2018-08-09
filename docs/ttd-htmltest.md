@@ -26,7 +26,7 @@ docker run -it -v `pwd`:/build/docs testthedocs/ttd-htmltest
 
 If you have any validations `ttd-mdlint` will report them.
 
-![A Gif with example](docs/_static/ttd-htmltest.png)
+![A Gif with example](images/ttd-htmltest.png)
 
 ## Source Code
 
