@@ -27,7 +27,7 @@ docker pull testthedocs/ttd-vale
 Run `ttd-vale` from in your docs directory:
 
 ```console
-docker run -it -v `pwd`:/build/docs testthedocs/ttd-vale:latest
+docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-vale
 ```
 
 ## Contribute
