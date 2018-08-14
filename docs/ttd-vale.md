@@ -63,7 +63,7 @@ All style related tests generate `suggestion`s.:
 ## Usage
 
 ```console
-docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-vale
+docker run -it -v $(pwd)/docs:/srv/docs testthedocs/ttd-vale
 ```
 
 If you have any issues `ttd-vale` reports them, and the severity of the issue as defined by the `.vale.ini` file.
