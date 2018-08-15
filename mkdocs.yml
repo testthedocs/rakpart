@@ -27,11 +27,11 @@ copyright: 'Copyright &copy; 2018 - TTD Community'
 pages:
   - About: index.md
   - Tests:
-    - Trailing Spaces: ttd-ts.md
-    - Toctree: ttd-toctree.md
-    - Tab: ttd-tab.md
-    - Markdown Lint: ttd-mdlint.md
     - HTMLTest: ttd-htmltest.md
+    - Markdown Lint: ttd-mdlint.md
+    - Tab: ttd-tab.md
     - Textlint: ttd-textlint.md
+    - Toctree: ttd-toctree.md
+    - Trailing Spaces: ttd-ts.md
     - Vale: ttd-vale.md
   - Contributing: contributing.md
