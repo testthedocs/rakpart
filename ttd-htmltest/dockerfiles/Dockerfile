@@ -3,7 +3,7 @@ LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
     vale_version=$VALE_VERSION
 
-ENV HTMLTEST_VERSION 0.6.0
+ENV HTMLTEST_VERSION 0.10.1
 
 RUN builddeps=' \
     curl \
