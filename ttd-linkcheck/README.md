@@ -25,6 +25,8 @@ docker pull testthedocs/ttd-mdlint
 
 ## Usage
 
+docker run -it -v `pwd`:/srv/test lc:latest
+
 ``` console
 docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-mdlint
 ```
