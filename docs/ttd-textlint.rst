@@ -31,7 +31,7 @@ ttd-textlint expects a configuration file called ``.textlintrc``
      ],
      "rules": {
        "write-good": {
-        "so": true
+         "so": true
        }
      }
    }
