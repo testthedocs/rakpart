@@ -46,4 +46,4 @@ If you are having issues, please let us know.
 License
 ======
 
-The project is licensed under the GPLv2.
+`MIT <https://choosealicense.com/licenses/mit/>`_
