@@ -1,6 +1,6 @@
-=============
-Markdown Lint
-=============
+=================
+TTD Markdown Lint
+=================
 
 .. admonition:: About
 

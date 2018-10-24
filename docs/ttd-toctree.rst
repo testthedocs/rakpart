@@ -1,6 +1,6 @@
-===================
-Sphinx Toctree Test
-===================
+===========
+TTD Toctree
+===========
 
 .. admonition:: About
 

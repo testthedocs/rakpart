@@ -1,6 +1,6 @@
-=============
-TTD HTML Test
-=============
+============
+TTD HTMLTest
+============
 
 .. admonition:: About
 
