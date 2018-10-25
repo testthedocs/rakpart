@@ -2,7 +2,7 @@
 TTD Markdown Lint
 =================
 
-.. admonition:: About
+.. admonition:: Abstract
 
     Markdown Linter In A Container.
 
@@ -24,7 +24,7 @@ Please see the `list <https://github.com/DavidAnson/markdownlint#rules--aliases>
 Usage
 =====
 
-.. code-block:: console
+.. code-block:: shell
 
     docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-mdlint
 

@@ -2,7 +2,7 @@
 TTD Trailing Spaces
 ===================
 
-.. admonition:: About
+.. admonition:: Abstract
 
     Check your `rst` based documentation for trailing spaces on line ends.
 
@@ -21,7 +21,7 @@ If ttd-ts can not find an _index.rst_ the test fails.
 
 The following example mounts your current working directory into the container and runs the check:
 
-.. code-block:: console
+.. code-block:: shell
 
    docker run -t -v `pwd`:/build/docs testthedocs/ttd-ts
 

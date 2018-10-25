@@ -8,8 +8,6 @@ TTD HTML
 
 Based on: `htmltest <https://github.com/wjdp/htmltest>`_.
 
-Another great alternative is `remark-lint <https://github.com/remarkjs/remark-lint>`_.
-
 Installation
 ============
 
@@ -29,7 +27,7 @@ If you use a different setup, you have to create your own *.html.yml*.
 
 You can find more information in the `htmltest repository <https://github.com/wjdp/htmltest>`_.
 
-.. code-block:: console
+.. code-block:: shell
 
    docker run -it -v `pwd`:/build/docs testthedocs/ttd-htmltest
 

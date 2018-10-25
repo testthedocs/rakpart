@@ -2,13 +2,11 @@
 TTD Textlint
 ============
 
-.. admonition:: About
+.. admonition:: Abstract
 
    A pluggable linting tool for text and markdown.
 
 Based on: `textlint <https://textlint.github.io>`_.
-
-Another great alternative is `remark-lint <https://github.com/remarkjs/remark-lint>`_.
 
 Installation
 ============
@@ -42,7 +40,7 @@ For more info, please read the `documentation about configuring textlint <https:
 Usage
 =====
 
-.. code-block:: console
+.. code-block:: shell
 
    docker run -v "${PWD}":/srv testthedocs/ttd-textlint *
 

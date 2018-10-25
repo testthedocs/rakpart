@@ -2,9 +2,9 @@
 TTD Tab
 =======
 
-.. admonition:: About
+.. admonition:: Abstract
 
-    Checking And Reporting Tabs.
+    Checking and reporting tabs.
 
 Installation
 ============
@@ -16,7 +16,7 @@ Dependencies
 
 Pull the image:
 
-.. code-block:: console
+.. code-block:: shell
 
    docker pull testthedocs/ttd-tab
 
@@ -28,7 +28,7 @@ Navigate to the directory containing your documentation.
 Run The Test
 ------------
 
-.. code-block:: console
+.. code-block:: shell
 
    docker run -it -v `pwd`:/build/docs testthedocs/ttd-tab
 

@@ -2,9 +2,9 @@
 TTD Toctree
 ===========
 
-.. admonition:: About
+.. admonition:: Abstract
 
-    Toctree Validation For Sphinx Based Documentation
+    Toctree validation for sphinx based documentation.
 
 This test checks for multiple `:numbered:` entries.
 
@@ -23,7 +23,7 @@ Usage
 
 Navigate to the directory containing your reStructuredText (.rst) files.
 
-.. code-block:: console
+.. code-block:: shell
 
    docker run -it -v `pwd`:/build/docs testthedocs/ttd-toctree
 

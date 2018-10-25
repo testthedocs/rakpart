@@ -2,7 +2,7 @@
 TTD Vale
 ========
 
-.. admonition:: About
+.. admonition:: Abstract
 
     Spelling, grammar, style and readability linter in a container.
 
@@ -61,7 +61,7 @@ All style related tests generate *suggestion`s*.
 Usage
 =====
 
-.. code-block:: console
+.. code-block:: shell
 
    docker run -it -v `pwd`:/srv/tests testthedocs/ttd-vale
 
