@@ -17,3 +17,4 @@ parts/
 dist/
 var/
 Vale-styles
+docs/_build/
