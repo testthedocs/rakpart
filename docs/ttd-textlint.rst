@@ -42,7 +42,7 @@ Usage
 
 .. code-block:: shell
 
-   docker run -v "${PWD}":/srv testthedocs/ttd-textlint *
+   docker run -v `pwd`:/srv testthedocs/ttd-textlint *
 
 
 If you have any validation `ttd-textlint` will report them.

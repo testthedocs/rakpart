@@ -26,7 +26,7 @@ Usage
 
 .. code-block:: shell
 
-    docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-mdlint
+    docker run -v `pwd`:/srv/docs testthedocs/ttd-mdlint
 
 
 If you have any validations `ttd-mdlint` will report them.
