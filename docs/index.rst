@@ -6,9 +6,6 @@ Rakpart
 
     Ships may dock to load and unload cargo or passengers.
 
-.. admonition:: About
-
-   Collection Of Docker Based Documentation Tests.
 
 Writing documentation is hard, testing is even harder.
 
@@ -18,7 +15,7 @@ Nevertheless, you can use them locally, too.
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Checks
+   :caption: Checks:
 
    ttd-mdlint
    ttd-tab
@@ -31,7 +28,7 @@ Nevertheless, you can use them locally, too.
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: About
+   :caption: About:
 
    contributing
 

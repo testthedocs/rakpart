@@ -1,8 +1,8 @@
-============
-TTD HTMLTest
-============
+========
+TTD HTML
+========
 
-.. admonition:: About
+.. admonition:: Abstract
 
     ``htmltest`` runs your HTML output through a series of checks to ensure all your links, images, scripts references work, your alt tags are filled in, et cetera.
 
