@@ -94,6 +94,8 @@ html_theme_options = {
     'logo_name':'false',
     'logo':'ttd-logo.png',
     'show_powered_by':'false',
+    'github_user':'testthedocs',
+    'github_repo':'rakpart',
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
