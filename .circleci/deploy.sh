@@ -8,7 +8,7 @@ zip -r website.zip ~/sphinx/html/_build/html
 #     --data-binary "@website.zip" \
 #     https://api.netlify.com/api/v1/sites/$API/deploys
 
-NETLIFY_SITE_NAME=competent-goldwasser-6c4fb3.netlify.com
+NETLIFY_SITE_NAME=pedantic-ritchie-166766.netlify.com
 
 curl -H "Content-Type: application/zip" \
      -H "Authorization: Bearer $NETLIFYKEY" \
