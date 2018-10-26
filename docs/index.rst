@@ -23,7 +23,7 @@ Nevertheless, you can use them locally, too.
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: About:
+   :caption: Contribute:
 
    contributing
 
