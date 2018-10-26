@@ -38,10 +38,6 @@ jobs:
 workflows:
   version: 2
   btd:
-    build:
-      branches:
-        only:
-          - master
     jobs:
       - "html"
       - "deploy site":
