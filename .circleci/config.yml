@@ -1,4 +1,3 @@
-# CI setup for rakpart
 version: 2.0
 
 defaults: &defaults
