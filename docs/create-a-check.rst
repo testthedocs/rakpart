@@ -48,4 +48,4 @@ started.
 
 .. code-block:: shell
 
-   docker run -it -v `pwd`:/srv/data testthedocs/marvin $MY-NEW-CHECK
+   docker run -it -v `pwd`:/srv/data testthedocs/marvin rakpart-check
