@@ -25,5 +25,5 @@ Nevertheless, you can use them locally, too.
    :maxdepth: 2
    :caption: Contribute:
 
-   contributing
+   create-a-check
 
