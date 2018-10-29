@@ -20,6 +20,7 @@ Nevertheless, you can use them locally, too.
    ttd-vale
    ttd-htmltest
    ttd-linkcheck
+   ttd-doc8
 
 .. toctree::
    :hidden:
