@@ -35,4 +35,4 @@ Default settings are configured in the `script itself <https://github.com/testth
 Source Code
 ===========
 
-The code of `tts-linkcheck` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-linkcheck>`_.
+The code of `ttd-linkcheck` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-linkcheck>`_.

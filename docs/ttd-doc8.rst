@@ -44,4 +44,4 @@ Checks
 Source Code
 ===========
 
-The code of `tts-doc8` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-doc8>`_.
+The code of `ttd-doc8` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-doc8>`_.

@@ -31,4 +31,4 @@ Navigate to the directory containing your reStructuredText (.rst) files.
 Source Code
 ===========
 
-The code of `tts-toctree` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-toctree>`_.
+The code of `ttd-toctree` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-toctree>`_.

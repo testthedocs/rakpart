@@ -36,4 +36,4 @@ Run The Test
 Source Code
 ===========
 
-The code of `tts-tab` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-tab>`_.
+The code of `ttd-tab` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-tab>`_.

@@ -34,4 +34,4 @@ The script reports if it detects trailing spaces on line ends, and shows the nam
 Source Code
 ===========
 
-The code of `tts-ts` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-ts>`_.
+The code of `ttd-ts` is located on `GitHub <https://github.com/testthedocs/rakpart/tree/master/ttd-ts>`_.
