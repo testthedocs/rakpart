@@ -10,14 +10,10 @@ Dependencies
 ============
 
 - `Docker <https://docker.com>`_
+- `Marvin <https://github.com/testthedocs/marvin>`_
 
 Getting Started
 ===============
-
-Dependencies
-------------
-
-- `Marvin <https://github.com/testthedocs/marvin>`_
 
 .. note::
 
