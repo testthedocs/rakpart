@@ -6,8 +6,7 @@ TTD Linkcheck
 
    Linkchecker for ``rst`` and ``md`` source files.
 
-
-Based on:
+Based on `linkcheck <https://github.com/cytopia/linkcheck>`_.
 
 Installation
 ============
@@ -17,11 +16,6 @@ Dependencies
 
 - `Docker <https://docker.com>`_
 
-
-Documentation
-=============
-
-
 Usage
 =====
 
@@ -29,8 +23,12 @@ docker run -it -v `pwd`:/srv/test lc:latest
 
 .. code-block:: console
 
-   docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-linkcheck
+   docker run -v `pwd`:/srv/docs testthedocs/ttd-linkcheck
 
+Settings
+--------
+
+Default settings are configured in the `script itself <https://github.com/testthedocs/rakpart/blob/master/ttd-linkcheck/linkcheck>`_.
 
 Contribute
 ==========

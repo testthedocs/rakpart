@@ -19,6 +19,7 @@ Nevertheless, you can use them locally, too.
    ttd-textlint
    ttd-vale
    ttd-htmltest
+   ttd-linkcheck
 
 .. toctree::
    :hidden:

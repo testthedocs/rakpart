@@ -20,7 +20,7 @@ SEARCH_PATH="."
 ###
 ### Comma separated list of file extensions to scan for urls
 ###
-EXTENSIONS=""
+EXTENSIONS="md,rst"
 
 
 ###
@@ -32,7 +32,7 @@ URL_REGEX_EXCLUDE="^http(s)?:\\/\\/(127\\.0\\.0\\.1)|(localhost).*$"
 ###
 ### Timeout in seconds to see if a site is alive
 ###
-TIMEOUT=10
+TIMEOUT=5
 
 
 ###
@@ -45,7 +45,7 @@ RETRIES=3
 ### Comma separated list of acceptable http status codes
 ### to define that the URL is alive
 ###
-STATUS_CODES=200
+STATUS_CODES=200,301
 
 
 ############################################################
