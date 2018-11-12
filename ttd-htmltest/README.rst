@@ -49,7 +49,7 @@ Contribute
 ==========
 
 - `Issue Tracker <https://github.com/testthedocs/rakpart/issues>`_
-- `Source Code <https://github.com/testthedocs/rakpart/tree/master/ttd-htmltest`_
+- `Source Code <https://github.com/testthedocs/rakpart/tree/master/ttd-htmltest>`_
 
 Support
 =======

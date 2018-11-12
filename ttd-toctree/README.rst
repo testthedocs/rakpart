@@ -15,7 +15,7 @@ This tests checks all reStructuredText (.rst) files, if the test detects
 Features
 ========
 
-- Small Image, based on `Alpine Linux <https://www.alpinelinux.org/>.
+- Small Image, based on `Alpine Linux <https://www.alpinelinux.org/>`_.
 - Uses `Tini <https://github.com/krallin/tini>`_ as `init`.
 - Uses `su-exec <https://github.com/ncopa/su-exec>`_ for setting permissions.
 - Uses `The Silver Searcher <https://geoff.greer.fm/ag/>`_ for speed and better configuration.

@@ -48,7 +48,7 @@ Contribute
 ==========
 
 - `Issue Tracker <https://github.com/testthedocs/rakpart/issues>`_
-- `Source Code <https://github.com/testthedocs/rakpart/tree/master/ttd-doc8`_
+- `Source Code <https://github.com/testthedocs/rakpart/tree/master/ttd-doc8>`_
 
 Support
 =======

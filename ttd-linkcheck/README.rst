@@ -42,6 +42,6 @@ Support
 If you are having issues, please let us know.
 
 License
-======
+=======
 
 `MIT <https://choosealicense.com/licenses/mit/>`_

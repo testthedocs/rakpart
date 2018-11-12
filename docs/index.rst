@@ -21,6 +21,7 @@ Nevertheless, you can use them locally, too.
    ttd-htmltest
    ttd-linkcheck
    ttd-doc8
+   ttd-repo
 
 .. toctree::
    :hidden:
@@ -28,4 +29,5 @@ Nevertheless, you can use them locally, too.
    :caption: Contribute:
 
    create-a-check
+   style-guide
 

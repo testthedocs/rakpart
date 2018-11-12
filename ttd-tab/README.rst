@@ -7,9 +7,9 @@ Containerised application for checking trailing spaces on line ends.
 Features
 ========
 
-- Small Image, based on [Alpine Linux](http://www.alpinelinux.org/).
-- Uses [Tini](https://github.com/krallin/tini) as `init`.
-- Uses [su-exec](https://github.com/ncopa/su-exec) for setting permissions.
+- Small Image, based on `Alpine Linux <http://www.alpinelinux.org/>`_.
+- Uses `Tini <https://github.com/krallin/tini>`_ as `init`.
+- Uses `su-exec <https://github.com/ncopa/su-exec>`_ for setting permissions.
 - Uses grep and awk for searching and displaying
 
 Dependencies
@@ -39,7 +39,7 @@ Contribute
 ==========
 
 - `Issue Tracker <https://github.com/testthedocs/rakpart/issues>`_
-- `Source Code <https://github.com/testthedocs/rakpart/tree/master/ttd-tab`_
+- `Source Code <https://github.com/testthedocs/rakpart/tree/master/ttd-tab>`_
 
 Support
 =======

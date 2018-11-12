@@ -8,7 +8,7 @@ Features
 ========
 
 - Small Image, based on `Alpine Linux <https://www.alpinelinux.org/>`_.
-- Uses `Tini https://github.com/krallin/tini>`_ as `init`.
+- Uses `Tini <https://github.com/krallin/tini>`_ as `init`.
 - Uses `su-exec <https://github.com/ncopa/su-exec>`_ for setting permissions.
 - Uses `The Silver Searcher <https://github.com/ggreer/the_silver_searcher>`_ for searching.
 
