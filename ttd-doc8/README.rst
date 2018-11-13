@@ -27,7 +27,7 @@ Run `ttd-doc8` from in your docs directory:
 
 .. code-block:: shell
 
-   docker run -it -v `pwd`:/srv/data testthedocs/doc8
+   docker run -it -v `pwd`:/srv/data testthedocs/ttd-doc8
 
 Checks
 ------
