@@ -2,6 +2,16 @@
 Changelog
 =========
 
+0.0.5
+=====
+
+- More output color [svx]
+
+0.0.4
+=====
+
+- Change output color [svx]
+
 0.0.3
 =====
 
