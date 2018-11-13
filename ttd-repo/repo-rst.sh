@@ -10,8 +10,8 @@ COL_RESET=$ESC_SEQ"39;49;00m"
 COL_YELLOW=$ESC_SEQ"33;01m"
 COL_RED=$ESC_SEQ"31;01m"
 # Other
-CHECK_FILES='VERSION README.rst CHANGES.rst Makefile'
-CHECK_DIRS='.dockerignore .gitignore dockerfiles'
+CHECK_FILES='VERSION README.rst CHANGES.rst Makefile .dockerignore .gitignore'
+CHECK_DIRS='dockerfiles'
 
 # Functions
 # Error
@@ -20,29 +20,27 @@ error_exit() {
     exit 1
 }
 
-
-
 # Check files
 file_check() {
     echo -en "$COL_YELLOW Checking files ...$COL_RESET\n"
-    for i in $CHECK_FILES
+    for file in $CHECK_FILES
     do
-        if [ ! -f "$i" ]; then
-            echo -en "$COL_RED Cannot detect $i $COL_RESET\n"
+        if [ ! -f "$file" ]; then
+            echo -en "$COL_RED Cannot detect $file $COL_RESET\n"
+            exit 1
     fi
     done
-    exit 1
 }
 
 dir_check() {
     echo -en "$COL_YELLOW Checking directories ...$COL_RESET\n"
-    for i in $CHECK_DIRS
+    for dir in $CHECK_DIRS
     do
-        if [ ! -d "$i" ]; then
-            echo -en "$COL_RED Cannot detect $i $COL_RESET\n"
+        if [ ! -d "$dir" ]; then
+            echo -en "$COL_RED Cannot detect $dir $COL_RESET\n"
+            exit 1
         fi
     done
-    exit 1
 }
 
 

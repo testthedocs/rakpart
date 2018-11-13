@@ -35,11 +35,11 @@ File checks for:
 - CHANGES.rst
 - VERSION
 - Makefile
+- .dockerignore
+- .gitignore
 
 Directory checks for:
 
-- .dockerignore
-- .gitignore
 - dockerfiles
 
 Source Code
