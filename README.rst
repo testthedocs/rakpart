@@ -3,7 +3,9 @@ Rakpart
 =======
 
 Quay for documentation check Docker images.
+
 TestTheDocs creates opinionated defaults based on our experiences, but we are aware that everyone has different requirements.
+
 Each folder has a DockerFile, other files it needs, and you can find further `documentation online <https://rakpart.testthedocs.org>`_.
 
 Contributing
