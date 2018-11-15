@@ -30,4 +30,6 @@ Nevertheless, you can use them locally, too.
 
    create-a-check
    style-guide
+   commit-guidelines
+   code-of-conduct
 
