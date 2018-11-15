@@ -1,9 +1,9 @@
-FROM debian:latest
+FROM debian:9-slim
 LABEL maintainer "Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor = "TestTheDocs" \
-    vale_version=$VALE_VERSION
+    org.label-schema.vendor = "TestTheDocs"
 
-ENV HTMLTEST_VERSION 0.10.1
+COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY htmltest.yml /build/.htmltest.yml
 
 RUN builddeps=' \
     curl \
@@ -14,8 +14,7 @@ RUN builddeps=' \
     $builddeps \
     python-docutils \
     gosu \
-    && curl -kLo /usr/local/bin/htmltest https://github.com/wjdp/htmltest/releases/download/v${HTMLTEST_VERSION}/htmltest-linux \
-    && chmod +x /usr/local/bin/htmltest \
+    && curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -23,7 +22,4 @@ VOLUME ["/build/"]
 
 WORKDIR /build/docs
 
-COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY htmltest.yml /build/.htmltest.yml
-
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash"]
