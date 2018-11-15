@@ -8,6 +8,11 @@ TTD HTML
 
 Based on: `htmltest <https://github.com/wjdp/htmltest>`_.
 
+
+.. note::
+
+   Currently this check if configured for *rst* and *Sphinx* **only** !
+
 Installation
 ============
 
