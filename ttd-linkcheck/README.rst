@@ -19,11 +19,9 @@ Dependencies
 Usage
 =====
 
-docker run -it -v `pwd`:/srv/test lc:latest
-
 .. code-block:: console
 
-   docker run -v `pwd`:/srv/docs testthedocs/ttd-linkcheck
+   docker run -it -v `pwd`:/srv/docs testthedocs/ttd-linkcheck
 
 Settings
 --------

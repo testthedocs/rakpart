@@ -2,25 +2,11 @@
 Changelog
 =========
 
-0.0.5
-=====
-
-- Disable MD044 [svx]
-
-0.0.4
-=====
-
-- Add .dockerignore [svx]
-
-0.0.3
-=====
-
-- Allow inline HTML (MD033) [svx]
-
 0.0.2
 =====
 
-- Add bash package [svx]
+- Update to cytopia/linkcheck 0.12 [svx]
+- Allow to follow redirects [svx]
 
 0.0.1
 =====

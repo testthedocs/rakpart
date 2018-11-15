@@ -48,6 +48,20 @@ RETRIES=3
 STATUS_CODES=200,301
 
 
+###
+### Allow insecure SSL connections if chosen
+### This is exactly: curl -k
+###
+INSECURE_SSL=""
+
+
+###
+### Follow redirects
+### This is exactly: curl -L
+###
+FOLLOW_REDIRECT="-L"
+
+
 ############################################################
 # Fixed global variables
 ############################################################
@@ -57,7 +71,25 @@ STATUS_CODES=200,301
 ###
 URL_REGEX="http(s)?:\\/\\/[-+%=?&():,._/#0-9a-zA-Z]+"
 
-MY_VERSION="v0.6"
+MY_VERSION="v0.12"
+
+
+###
+### Curl defaults
+###
+### Some sites are very pickey about giving you correct return code if they think
+### you are nun human-enough.
+### This adds some sane defaults to all curl requests
+###
+### Note: Additionally 'Host' will be added dynamically
+###       Host: FQDN of URL
+###
+CURL_DEFAULTS=""
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Cache-Control: max-age=0'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Accept-Language: en-US,en;q=0.8,en-GB;q=0.6,es;q=0.4'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'DNT: 1'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Referer: https://www.google.com'"
 
 
 ############################################################
@@ -68,7 +100,7 @@ MY_VERSION="v0.6"
 ### Usage
 ###
 print_usage() {
-	echo "Usage: linkcheck [-e -i -t -r -c] [<path>]"
+	echo "Usage: linkcheck [-e -i -t -r -c -k -l] [<path>]"
 	echo "       linkcheck --version"
 	echo "       linkcheck --help"
 	echo
@@ -107,6 +139,13 @@ print_usage() {
 	echo "            -c '200,301'"
 	echo "            -c '200,301,302'"
 	echo
+	echo "-k        Ignore invalid SSL certificates for HTTPS connections."
+	echo "          This argument does not accept any parameters."
+	echo "          Defaults to error on invalid SSL certificates."
+	echo
+	echo "-l        Specify whether to follow redirect URLs or not."
+	echo "          This argument does not accept any parameters."
+	echo "          Defaults to not following redirects."
 	echo
 	echo "--version Show version and exit."
 	echo "--help    Show this help screen."
@@ -144,7 +183,7 @@ setval() {
 ###
 sanitize_url() {
 	local url="${1}"
-	local invalid="[,.!\)]$"
+	local invalid="[,.!\\)]\$"
 
 	# Remove any trailing garbage
 	while [[ ${url} =~ ${invalid} ]]; do
@@ -198,6 +237,16 @@ probe_urls() {
 	local timeout="${2}"
 	local retries="${3}"
 	local status_codes="${4}"
+	local insecure_ssl="${5}"
+	local follow_redirect="${6}"
+
+	local clr_test="\033[0;33m"  # Yellow
+	local clr_fail="\033[0;31m"  # Red
+	local clr_err="\033[0;31m"   # Red
+	local clr_ok="\033[0;32m"    # Green
+	local clr_rst="\033[m"       # Reset to normal
+
+	local host=
 	local ret_code=0
 
 	status_codes="${status_codes//,/|}"          # comma to |
@@ -209,21 +258,29 @@ probe_urls() {
 	# Probe each url
 	for url in ${urls}; do
 
-		printf "\\e[0;33m[TEST]\\e[0m %s ..." "${url}"
+		# Determine hostname for Host header
+		host="$( echo "${url}" | sed 's|^http\(s\)*://||g' | sed 's|/.*$||g' )"
+
+		opts="-SsI"
+		opts="${opts} --retry-delay 2"
+		opts="${opts} --retry ${retries}"
+		opts="${opts} --connect-timeout ${timeout}"
+		opts="${opts} ${insecure_ssl}"
+		opts="${opts} -H 'Host: ${host}'"
+		opts="${opts} ${CURL_DEFAULTS}"
+		opts="${opts} ${follow_redirect}"
+		#echo "curl ${opts} ${url}"
+
+		printf "${clr_test}[TEST]${clr_rst} %s ..." "${url}"
 
 		# Get header from URL
-		eval "$( curl -SsI \
-			--retry-delay 2 \
-			--retry "${retries}" \
-			--connect-timeout "${timeout}" \
-			"${url}" 2> >(setval errval) > >(setval header); <<<"$?" setval retval;
-		)"
+		eval "$(eval "curl  ${opts} \"${url}\"" 2> >(setval errval) > >(setval header); <<<$? setval retval)";
 
 		# Curl request failed
 		# shellcheck disable=SC2154
 		if [ "${retval}" != "0" ]; then
 			# shellcheck disable=SC2154
-			printf "\\r\\e[0;31m[FAIL]\\e[0m %s %s\\n" "${url}" "${errval}"
+			printf "\r${clr_fail}[FAIL]${clr_rst} %s %s\n" "${url}" "${errval}"
 			ret_code=1
 
 		# Curl request succeeded
@@ -232,12 +289,15 @@ probe_urls() {
 			line="$( echo "${header}" | grep -E '^HTTP/(1|2)' )"
 			stat="$( echo "${line}" | awk '{print $2}' )"
 
-			#if [ "${stat}" != "200" ]; then
-			if ! echo "${stat}" | grep -qE "${status_codes}"; then
-				printf "\\r\\e[0;31m[ERR]\\e[0m  %s \\e[0;31m%s\\e[0m\\n" "${url}" "${line}"
+			if ! echo "${stat}" | tail -1 | grep -qE "${status_codes}"; then
+				# Fix error line for multiline (in case of redirects via -l option)
+				line="$( echo "${line}" | paste -sd "," | sed 's/,/ -> /g' | head -1 | tr -d '\n' | tr -d '\r' | sed 's/\s*$//g' )"
+				printf "\r${clr_err}[ERR]${clr_rst}  %s ${clr_err}%s${clr_rst}\n" "${url}" "(${line})"
 				ret_code=1
 			else
-				printf "\\r\\e[0;32m[OK]\\e[0m   %s \\e[0;32m[%s]\\e[0m\\n" "${url}" "${stat}"
+				# Fix status code for multiline (in case of redirects via -l option)
+				stat="$( echo "${stat}" | paste -sd "," | sed 's/,/ -> /g' )"
+				printf "\r${clr_ok}[OK]${clr_rst}   %s ${clr_ok}%s${clr_rst}\n" "${url}" "(${stat})"
 			fi
 		fi
 	done
@@ -307,6 +367,16 @@ while [ $# -gt 0  ]; do
 			;;
 
 		# ----------------------------------------
+		-k)
+			INSECURE_SSL="-k"
+			;;
+
+		# ----------------------------------------
+		-l)
+			FOLLOW_REDIRECT="-L"
+			;;
+
+		# ----------------------------------------
 		--help)
 			print_usage
 			exit 0
@@ -337,4 +407,4 @@ done
 
 MY_URLS="$( gather_urls "${SEARCH_PATH}" "${EXTENSIONS}" "${URL_REGEX}" "${URL_REGEX_EXCLUDE}" )"
 
-probe_urls "${MY_URLS}" "${TIMEOUT}" "${RETRIES}" "${STATUS_CODES}"
+probe_urls "${MY_URLS}" "${TIMEOUT}" "${RETRIES}" "${STATUS_CODES}" "${INSECURE_SSL}" "${FOLLOW_REDIRECT}"
