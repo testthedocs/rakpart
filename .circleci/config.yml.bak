@@ -1,5 +1,10 @@
 version: 2.0
 
+general:
+  branches:
+    only:
+      - master
+
 defaults: &defaults
   working_directory: ~/sphinx
 
@@ -43,6 +48,3 @@ workflows:
       - "deploy site":
           requires:
              - "html"
-          filters:
-            branches:
-              only: master
