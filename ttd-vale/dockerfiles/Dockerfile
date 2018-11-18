@@ -38,3 +38,4 @@ VOLUME /srv
 
 #ENTRYPOINT [ "bash" ]
 ENTRYPOINT [ "/sbin/tini", "--", "/usr/local/bin/entrypoint.sh" ]
+CMD []
