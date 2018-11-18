@@ -21,7 +21,7 @@ Usage
 
 .. code-block:: console
 
-   docker run -it -v `pwd`:/srv/docs testthedocs/ttd-linkcheck
+   docker run -it -v `pwd`:/srv/test testthedocs/ttd-linkcheck
 
 Settings
 --------

@@ -23,7 +23,7 @@ Navigate to the directory containing your reStructuredText (.rst) or markdown (.
 
 .. code-block:: shell
 
-   docker run -v `pwd`:/srv/docs testthedocs/ttd-linkcheck
+   docker run -v `pwd`:/srv/test testthedocs/ttd-linkcheck
 
 Settings
 --------
