@@ -6,6 +6,7 @@ ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
 COL_YELLOW=$ESC_SEQ"33;01m"
 COL_RED=$ESC_SEQ"31;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
 
 # Functions
 # Error
@@ -19,12 +20,12 @@ check_tabs() {
     if ag -t -c -l ' \n'
     then
         echo -en "$COL_RED It seems there are trailing spaces!$COL_RESET\n"
-        echo -en "$COL_RED See above filename and number of issues $COL_RESET\n"
-        echo -en "$COL_RED Syntax: filename:issues $COL_RESET\n"
-        echo -en "$COL_RED Thank you ! $COL_RESET\n"
+        echo -en "$COL_YELLOW See above filename and number of issues $COL_RESET\n"
+        echo -en "$COL_YELLOW Syntax: filename:issues $COL_RESET\n"
+        echo -en "$COL_YELLOW Thank you ! $COL_RESET\n"
         exit 1
     else
-        echo -en "$COL_YELLOW Looks good ! :)$COL_RESET\n"
+        echo -en "$COL_GREEN Looks good ! :)$COL_RESET\n"
     fi
 }
 

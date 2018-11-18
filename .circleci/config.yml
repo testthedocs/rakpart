@@ -1,56 +1,50 @@
 version: 2.0
 
+general:
+  branches:
+    only:
+      - master
+
 defaults: &defaults
-  working_directory: ~/build
+  working_directory: ~/sphinx
 
 jobs:
-  "markdown lint":
+  "html":
     docker:
-      - image: testthedocs/ttd-mdlint
+      - image: testthedocs/ttd-sphinx
     <<: *defaults
     steps:
       - checkout
       - run:
-          name: Run Markdown Lint
           command: |
-            markdownlint --config /srv/config.json docs/
-
-  "generate docs":
-    docker:
-      - image: wundertax/mkdocs
-    <<: *defaults
-    steps:
-      - checkout
-      - run:
-          name: Generate Documentation
-          command: |
-            mkdocs build
+              pwd
+              ls -la
+              sphinx-build -c docs -b html docs docs/_build/html
 
       - persist_to_workspace:
-          root: ~/
+          root: ~/sphinx/docs
           paths:
-            - build/site
+            - _build/html
 
   "deploy site":
     docker:
       - image: testthedocs/ttd-zipcurl
-    #<<: *defaults
+        #<<: *defaults
     steps:
       - checkout
       - attach_workspace:
-          at: ~/build/html
+          at: ~/sphinx/html
       - run:
           command: |
+              pwd
+              ls -la /root
               .circleci/deploy.sh
 
 workflows:
   version: 2
   btd:
     jobs:
-      - "markdown lint"
-      - "generate docs":
-           requires:
-            - "markdown lint"
+      - "html"
       - "deploy site":
-           requires:
-             - "generate docs"
+          requires:
+             - "html"

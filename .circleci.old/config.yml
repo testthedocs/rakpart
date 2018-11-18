@@ -1,0 +1,65 @@
+version: 2.0
+
+general:
+  branches:
+    only:
+     - master # list of branches to build
+
+defaults: &defaults
+  working_directory: ~/build
+
+jobs:
+  "markdown lint":
+    docker:
+      - image: testthedocs/ttd-mdlint
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Run Markdown Lint
+          command: |
+            markdownlint --config /srv/config.json docs/
+
+  "generate docs":
+    docker:
+      - image: wundertax/mkdocs
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Generate Documentation
+          command: |
+            mkdocs build
+
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - build/site
+
+  "deploy site":
+    docker:
+      - image: testthedocs/ttd-zipcurl
+    #<<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/build/html
+      - run:
+          command: |
+              .circleci/deploy.sh
+
+workflows:
+  version: 2
+  btd:
+    build:
+      branches:
+        only:
+          - master
+    jobs:
+      - "markdown lint"
+      - "generate docs":
+           requires:
+            - "markdown lint"
+      - "deploy site":
+           requires:
+             - "generate docs"

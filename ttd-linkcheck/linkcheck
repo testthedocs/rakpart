@@ -1,0 +1,410 @@
+#!/usr/bin/env bash
+
+# Be strict
+set -e
+set -u
+set -o pipefail
+
+
+############################################################
+# Overwritable global variables
+############################################################
+
+
+###
+### In what path to look for files
+###
+SEARCH_PATH="."
+
+
+###
+### Comma separated list of file extensions to scan for urls
+###
+EXTENSIONS="md,rst"
+
+
+###
+### Regex to exclude URLs from being tested
+###
+URL_REGEX_EXCLUDE="^http(s)?:\\/\\/(127\\.0\\.0\\.1)|(localhost).*$"
+
+
+###
+### Timeout in seconds to see if a site is alive
+###
+TIMEOUT=5
+
+
+###
+### How many times to probe one URL to see if it is alive
+###
+RETRIES=3
+
+
+###
+### Comma separated list of acceptable http status codes
+### to define that the URL is alive
+###
+STATUS_CODES=200,301
+
+
+###
+### Allow insecure SSL connections if chosen
+### This is exactly: curl -k
+###
+INSECURE_SSL=""
+
+
+###
+### Follow redirects
+### This is exactly: curl -L
+###
+FOLLOW_REDIRECT="-L"
+
+
+############################################################
+# Fixed global variables
+############################################################
+
+###
+### Regex to scan for URLs
+###
+URL_REGEX="http(s)?:\\/\\/[-+%=?&():,._/#0-9a-zA-Z]+"
+
+MY_VERSION="v0.12"
+
+
+###
+### Curl defaults
+###
+### Some sites are very pickey about giving you correct return code if they think
+### you are nun human-enough.
+### This adds some sane defaults to all curl requests
+###
+### Note: Additionally 'Host' will be added dynamically
+###       Host: FQDN of URL
+###
+CURL_DEFAULTS=""
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Cache-Control: max-age=0'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Accept-Language: en-US,en;q=0.8,en-GB;q=0.6,es;q=0.4'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'DNT: 1'"
+CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Referer: https://www.google.com'"
+
+
+############################################################
+# Functions
+############################################################
+
+###
+### Usage
+###
+print_usage() {
+	echo "Usage: linkcheck [-e -i -t -r -c -k -l] [<path>]"
+	echo "       linkcheck --version"
+	echo "       linkcheck --help"
+	echo
+	echo
+	echo "Options:"
+	echo
+	echo "-e        Limit search to those file extensions."
+	echo "          Defaults to limiting on non-binary files."
+	echo "          Accepts comma separated string of extensions:"
+	echo "            -e txt"
+	echo "            -e txt,rst"
+	echo "            -e sh,py.c,h"
+	echo
+	echo "-i        Ignore all URLs matching the specified regex."
+	echo '          Defaults to: ^http(s)?:\/\/(127\.0\.0\.1)|(localhost).*$'
+	echo "          Accepts a single regex string:"
+	echo "            -i '^http(?):\\/\\/my-comapny.com.*$'"
+	echo
+	echo "-t        Specify curl timeout in seconds, after which probing stops for one url."
+	echo "          Defaults to 10 seconds."
+	echo "          Accepts a positive integer:"
+	echo "            -t 5"
+	echo "            -t 10"
+	echo
+	echo "-r        Specify how many time to retry probing a single URL, before giving up."
+	echo "          Defaults to 3 times."
+	echo "          Accepts a positive integer:"
+	echo "            -r 5"
+	echo "            -r 10"
+	echo
+	echo "-c        Specify HTTP status codes that are valid for success."
+	echo "          Any code not specified in here will produce an error for the given URL."
+	echo "          Defaults to '200'."
+	echo "          Accepts comma separated string of http status codes:"
+	echo "            -c '200'"
+	echo "            -c '200,301'"
+	echo "            -c '200,301,302'"
+	echo
+	echo "-k        Ignore invalid SSL certificates for HTTPS connections."
+	echo "          This argument does not accept any parameters."
+	echo "          Defaults to error on invalid SSL certificates."
+	echo
+	echo "-l        Specify whether to follow redirect URLs or not."
+	echo "          This argument does not accept any parameters."
+	echo "          Defaults to not following redirects."
+	echo
+	echo "--version Show version and exit."
+	echo "--help    Show this help screen."
+	echo
+	echo
+	echo "Optional arguments:"
+	echo
+	echo "<path>    Specify what directory to scan files for URLs."
+	echo "          Defaults to current directory."
+	echo
+	echo
+}
+
+
+###
+### Version
+###
+print_version() {
+	echo "linkcheck ${MY_VERSION} by cytopia"
+	echo "https://github.com/cytopia/linkcheck"
+}
+
+
+###
+### Set value (used to store stdout and stderr in two different variables)
+###
+setval() {
+	printf -v "$1" "%s" "$(cat)";
+	declare -p "$1";
+}
+
+
+###
+### Sanitize URL
+###
+sanitize_url() {
+	local url="${1}"
+	local invalid="[,.!\\)]\$"
+
+	# Remove any trailing garbage
+	while [[ ${url} =~ ${invalid} ]]; do
+		url="${url::-1}"
+	done
+
+	echo "${url}"
+}
+
+
+###
+### Gather URLs from files
+###
+gather_urls() {
+	local path="${1}"
+	local extensions="${2}"
+	local reg_include="${3}"
+	local reg_exclude="${4}"
+
+	local find_ext=
+	local find_cmd=
+
+	if [ -n "${extensions}" ]; then
+		find_ext=" \\( -iname \\*.${extensions//,/ -o -iname \\*.} \\)"
+	fi
+
+	find_cmd="find ${path}${find_ext} -type f -exec grep -IEo '${reg_include}' '{}' \\; | sort -u"
+	>&2 echo "\$ ${find_cmd}"
+
+	# Loop through uniqued URLs
+	for url in $(eval "${find_cmd}" 2>/dev/null); do
+		# Ignore any 'Binary file...' results
+		if echo "${url}" | grep -Eq '^htt'; then
+			# Remove any trailing garbage
+			url="$( sanitize_url "${url}" )"
+
+			# Ignore URLs excluded by regex
+			if ! echo "${url}" | grep -qE "${reg_exclude}"; then
+				echo "${url}"
+			fi
+		fi
+	done
+}
+
+
+###
+### Probe URLs for availability
+###
+probe_urls() {
+	local urls="${1}"
+	local timeout="${2}"
+	local retries="${3}"
+	local status_codes="${4}"
+	local insecure_ssl="${5}"
+	local follow_redirect="${6}"
+
+	local clr_test="\033[0;33m"  # Yellow
+	local clr_fail="\033[0;31m"  # Red
+	local clr_err="\033[0;31m"   # Red
+	local clr_ok="\033[0;32m"    # Green
+	local clr_rst="\033[m"       # Reset to normal
+
+	local host=
+	local ret_code=0
+
+	status_codes="${status_codes//,/|}"          # comma to |
+	status_codes="${status_codes//[[:space:]]/}" # remove whitespace
+
+	# Remove duplicates
+	urls="$( echo "${urls}" | sort -u )"
+
+	# Probe each url
+	for url in ${urls}; do
+
+		# Determine hostname for Host header
+		host="$( echo "${url}" | sed 's|^http\(s\)*://||g' | sed 's|/.*$||g' )"
+
+		opts="-SsI"
+		opts="${opts} --retry-delay 2"
+		opts="${opts} --retry ${retries}"
+		opts="${opts} --connect-timeout ${timeout}"
+		opts="${opts} ${insecure_ssl}"
+		opts="${opts} -H 'Host: ${host}'"
+		opts="${opts} ${CURL_DEFAULTS}"
+		opts="${opts} ${follow_redirect}"
+		#echo "curl ${opts} ${url}"
+
+		printf "${clr_test}[TEST]${clr_rst} %s ..." "${url}"
+
+		# Get header from URL
+		eval "$(eval "curl  ${opts} \"${url}\"" 2> >(setval errval) > >(setval header); <<<$? setval retval)";
+
+		# Curl request failed
+		# shellcheck disable=SC2154
+		if [ "${retval}" != "0" ]; then
+			# shellcheck disable=SC2154
+			printf "\r${clr_fail}[FAIL]${clr_rst} %s %s\n" "${url}" "${errval}"
+			ret_code=1
+
+		# Curl request succeeded
+		else
+			# shellcheck disable=SC2154
+			line="$( echo "${header}" | grep -E '^HTTP/(1|2)' )"
+			stat="$( echo "${line}" | awk '{print $2}' )"
+
+			if ! echo "${stat}" | tail -1 | grep -qE "${status_codes}"; then
+				# Fix error line for multiline (in case of redirects via -l option)
+				line="$( echo "${line}" | paste -sd "," | sed 's/,/ -> /g' | head -1 | tr -d '\n' | tr -d '\r' | sed 's/\s*$//g' )"
+				printf "\r${clr_err}[ERR]${clr_rst}  %s ${clr_err}%s${clr_rst}\n" "${url}" "(${line})"
+				ret_code=1
+			else
+				# Fix status code for multiline (in case of redirects via -l option)
+				stat="$( echo "${stat}" | paste -sd "," | sed 's/,/ -> /g' )"
+				printf "\r${clr_ok}[OK]${clr_rst}   %s ${clr_ok}%s${clr_rst}\n" "${url}" "(${stat})"
+			fi
+		fi
+	done
+	return ${ret_code}
+}
+
+
+############################################################
+# Entrypoint: arguments
+############################################################
+#-e -i -t -r -c
+while [ $# -gt 0  ]; do
+	case "${1}" in
+
+		# ----------------------------------------
+		-e)
+			shift
+			if [ "${#}" -gt "0" ]; then
+				EXTENSIONS="${1}"
+			else
+				>&2 echo "Error, -e requires an argument."
+				exit 1
+			fi
+			;;
+
+		# ----------------------------------------
+		-i)
+			shift
+			if [ "${#}" -gt "0" ]; then
+				URL_REGEX_EXCLUDE="${1}"
+			else
+				>&2 echo "Error, -i requires an argument."
+				exit 1
+			fi
+			;;
+
+		# ----------------------------------------
+		-t)
+			shift
+			if [ "${#}" -gt "0" ]; then
+				TIMEOUT="${1}"
+			else
+				>&2 echo "Error, -t requires an argument."
+				exit 1
+			fi
+			;;
+
+		# ----------------------------------------
+		-r)
+			shift
+			if [ "${#}" -gt "0" ]; then
+				RETRIES="${1}"
+			else
+				>&2 echo "Error, -r requires an argument."
+				exit 1
+			fi
+			;;
+		# ----------------------------------------
+		-c)
+			shift
+			if [ "${#}" -gt "0" ]; then
+				STATUS_CODES="${1}"
+			else
+				>&2 echo "Error, -c requires an argument."
+				exit 1
+			fi
+			;;
+
+		# ----------------------------------------
+		-k)
+			INSECURE_SSL="-k"
+			;;
+
+		# ----------------------------------------
+		-l)
+			FOLLOW_REDIRECT="-L"
+			;;
+
+		# ----------------------------------------
+		--help)
+			print_usage
+			exit 0
+			;;
+
+		# ----------------------------------------
+		--version)
+			print_version
+			exit 0
+			;;
+
+		# ----------------------------------------
+		*)
+			# If it is the last argument, its the path
+			if [ "${#}" = "1" ]; then
+				SEARCH_PATH="${1}"
+			else
+				echo "Invalid argument: ${1}"
+				echo "Type 'linkcheck --help' for available options."
+				exit 1
+			fi
+			;;
+	esac
+	shift
+done
+
+
+
+MY_URLS="$( gather_urls "${SEARCH_PATH}" "${EXTENSIONS}" "${URL_REGEX}" "${URL_REGEX_EXCLUDE}" )"
+
+probe_urls "${MY_URLS}" "${TIMEOUT}" "${RETRIES}" "${STATUS_CODES}" "${INSECURE_SSL}" "${FOLLOW_REDIRECT}"

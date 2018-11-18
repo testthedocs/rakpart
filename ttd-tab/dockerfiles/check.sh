@@ -6,7 +6,7 @@ ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
 COL_YELLOW=$ESC_SEQ"33;01m"
 COL_RED=$ESC_SEQ"31;01m"
-
+COL_GREEN=$ESC_SEQ"32;01m"
 
 # Functions
 # Error
@@ -23,11 +23,11 @@ check_tabs() {
     then
         echo -en "$COL_RED It seems there are tabs!$COL_RESET\n"
         #grep --include=*.md -irnP "\t" . | awk -F: '{ print "\033[1;32m" $1 "\033[0m"":""\033[1;33m" $2 "\033[0m" }'
-        echo -en "$COL_RED Syntax: filename:line $COL_RESET\n"
-        echo -en "$COL_RED Thank you ! $COL_RESET\n"
+        echo -en "$COL_YELLOW Syntax: filename:line $COL_RESET\n"
+        echo -en "$COL_YELLOW Thank you ! $COL_RESET\n"
         exit 1
     else
-        echo -en "$COL_YELLOW Looks good ! :)$COL_RESET\n"
+        echo -en "$COL_GREEN Looks good ! :)$COL_RESET\n"
     fi
 }
 

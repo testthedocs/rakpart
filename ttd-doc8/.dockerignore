@@ -1,0 +1,9 @@
+.git
+.gitignore
+README.rst
+CHANGES.rst
+docs
+Makefile
+VERSION
+LICENSE
+TODO.rst
