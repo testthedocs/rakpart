@@ -21,3 +21,27 @@ help: ## This help message
 docs: ## Builds HTML of the docs for local QA/Testing
 	@echo "$(YELLOW)==> Building HTML  ....$(RESET)"
 	docker run --rm -v "${PWD}/docs":/build/docs:rw testthedocs/ttd-sphinx html
+
+#.PHONY: check-docker
+#check-docker: ## Run hadolint against Dockerfiles
+#	@echo "$(YELLOW)==> Running Hadolint against Dickerfiles  ....$(RESET)"
+#	@docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 - < dockerfiles/Dockerfile
+
+.PHONY: check-rst
+check-rst: ## Runs docs8, rst checks
+	@echo "$(YELLOW)==> Running doc8 checks against rst files ...$(RESET)"
+	@rm -rf docs/_build
+	@docker run -it -v "${PWD}/docs":/srv/data testthedocs/ttd-doc8
+
+.PHONY: check-links
+check-links: ## Run linkcheck, ignoring "localhost"
+	@echo "$(YELLOW)==> Running Linkcheck ...$(RESET)"
+	@rm -rf docs/_build
+	@docker run -it -v "${PWD}/docs":/srv/test testthedocs/ttd-linkcheck
+
+.PHONY: check-toctree
+check-toctree: ## Checks for for multiple :numbered: entries in toctrees
+	@echo "$(YELLOW)==> Checking toctree entries ...$(RESET)"
+	@docker run -it -v "${PWD}/docst":/build/docs testthedocs/ttd-toctree
+
+

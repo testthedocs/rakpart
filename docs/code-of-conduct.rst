@@ -17,7 +17,8 @@ Code Of Conduct
 TestTheDocs is a global community who shares information, discuss ideas, and work together to improve the art and science of documentation.
 
 Diversity is one of our huge strengths, but it can also lead to communication issues.
-To support a welcoming environment for all, regardless of individual differences, we have a few ground rules that we ask people to adhere to when they participate in this community activities.
+To support a welcoming environment for all, regardless of individual differences,
+we have a few ground rules that we ask people to adhere to when they participate in this community activities.
 
 These rules apply equally to founders, organizers, moderators, sponsors, and affiliates -- in short, to all participants.
 
@@ -30,7 +31,9 @@ The Principles
 ==============
 
 - **Be friendly and welcoming.** We strive to be a community that welcomes and supports people of all backgrounds and identities.
-  This includes, but is not limited to, members of any race, ethnicity, culture, national origin, color, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.
+  This includes, but is not limited to, members of any race, ethnicity, culture,
+  national origin, color, immigration status, social and economic class, educational level,
+  sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.
 
 
 - **Be respectful.** Not all of us will agree all the time, but disagreement is no excuse for poor behavior and poor manners.

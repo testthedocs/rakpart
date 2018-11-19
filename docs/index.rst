@@ -32,4 +32,5 @@ Nevertheless, you can use them locally, too.
    style-guide
    commit-guidelines
    code-of-conduct
+   docker
 
