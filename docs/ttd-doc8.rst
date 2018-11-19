@@ -30,7 +30,7 @@ Checks
 ------
 
 - Invalid rst format - ``D000``
-- Lines should not be longer than 150 characters - ``D001``
+- Lines should not be longer than 180 characters - ``D001``
 
   - RST exception: line with no whitespace except in the beginning
   - RST exception: lines with http or https urls
