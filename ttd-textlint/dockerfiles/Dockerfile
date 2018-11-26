@@ -1,9 +1,10 @@
-FROM alpine:latest
+#FROM alpine:3.8
+FROM node:10.7-alpine
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV PIP_CACHE /root/.cache
+COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN builddeps=' \
     build-base \
@@ -12,7 +13,7 @@ RUN builddeps=' \
     git \
     openssl \
     ' \
-    && adduser -s /bin/false -D textlintuser \
+    && adduser -s /bin/false -D ttd \
     && apk --no-cache add \
 	$builddeps \
 	musl \
@@ -27,11 +28,10 @@ RUN builddeps=' \
 	su-exec \
     && python3 -m ensurepip \
     && rm -r /usr/lib/python*/ensurepip \
-    && pip3 install --upgrade pip \
-    && pip3 install --upgrade setuptools \
-    && pip3 install docutils-ast-writer \
-    && rm -rf $PIP_CACHE \
-    && npm install  -g \
+    && pip3 install --upgrade --no-cache-dir pip \
+    && pip3 install --upgrade --no-cache-dir setuptools \
+    && pip3 install --no-cache-dir docutils-ast-writer \
+    && npm install -g -no-cache \
         textlint \
         textlint-rule-alex \
         textlint-rule-no-dead-link \
@@ -42,12 +42,11 @@ RUN builddeps=' \
         textlint-rule-rousseau \
 	textlint-rule-max-number-of-lines \
 	textlint-rule-terminology \
-    && npm cache clear \
+        textlint-rule-en-capitalization \
+        textlint-rule-common-misspellings \
     && apk del --purge $builddeps
 
 
 WORKDIR /srv
-#COPY example example
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 #ENTRYPOINT ["/bin/bash"]
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
