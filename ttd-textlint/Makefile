@@ -21,21 +21,13 @@ help: ## This help message
 
 .PHONY: image
 image: ## Builds docker image
-	docker build --no-cache=true --force-rm -t $(NAME):$(VERSION) .
+	docker build -f dockerfiles/Dockerfile --no-cache=true --force-rm -t $(NAME):$(VERSION) .
 
 .PHONY: testhtml
 html: ## Running a html test build in picky mode
 	@echo ""
 	@echo "$(YELLOW)==> Testing HTML of docs  ....$(RESET)"
 	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$$(id -u)":"$$(id -g)" quay.io/tiramisu/mr.docs testhtml
-
-.PHONY: html
-html: ## Building HTML for prod deploy
-	@echo ""
-	@echo "$(YELLOW)==> Building HTML  ....$(RESET)"
-	@cp VERSION docs
-	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$$(id -u)":"$$(id -g)" quay.io/tiramisu/mr.docs html
-	@rm docs/VERSION
 
 .PHONY: push
 push: ## Pushes images
@@ -53,28 +45,3 @@ last_built_date: ## Show last build date
 .PHONY: release
 release: testhtml image tag_latest push ## Combine steps to make release
 
-.PHONY: linkcheck
-linkcheck: ## Runs link-check
-	@echo ""
-	@echo "$(YELLOW)==> Checking Links  ....$(RESET)"
-	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$$(id -u)":"$$(id -g)" quay.io/tiramisu/mr.docs linkcheck
-
-.PHONY: alex
-alex: ## Run alex against the docs.
-	@echo ""
-	@echo "$(YELLOW)==> Running alex ...$(RESET)"
-	@docker run -it --rm -v "$(PWD)/docs/_build/markdown":/build mr.alex "$$@"
-	@echo "$(YELLOW)==> Removing markdown ...$(RESET)"
-	@rm -rf docs/_build/markdown
-
-.PHONY: markdown
-markdown: ## Convert HTML into markdown for alex
-	 @echo ""
-	 @echo "$(YELLOW)==> Creating markdown ...$(RESET)"
-	 @rm -rf docs/_build/markdown
-	 @docker run -it --rm -v ${PWD}/docs/_build:/source:rw -u "$$(id -u)":"$$(id -g)" mr.pandoc
-
-.PHONY: manners-check
-manners-check: markdown alex ## Runs makdown and alex as one target/step
-	@echo ""
-	@echo "$(YELLOW)==> Checking our manners ...$(RESET)"

@@ -4,7 +4,7 @@ TTD Textlint
 
 Custom setup of `textlint <https://textlint.github.io/>`_ in a Alpine container.
 
-.. image:: docs/_static/ttd-textlinter-example.gif
+.. image:: https://rakpart.testthedocs.org/_images/ttd-textlinter-example.gif
 
 Features
 ========
@@ -39,6 +39,11 @@ Pull the container from Docker Hub
 
 Usage
 =====
+
+.. code-block:: shell
+
+   docker run -it -v `pwd`/docs:/srv testthedocs/ttd-textlint *
+
 
 ttd-textlint expects a configuration file called ``.textlintrc``
 

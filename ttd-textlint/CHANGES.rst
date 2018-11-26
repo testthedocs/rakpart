@@ -2,6 +2,15 @@
 Changelog
 =========
 
+0.0.3
+=====
+
+- Change user in container to `ttd` [svx]
+- Pin Alpine version [svx]
+- Improve README [svx]
+- Start to improve Dockerfile [svx]
+- Improve repo setup [svx]
+
 0.0.2
 =====
 
