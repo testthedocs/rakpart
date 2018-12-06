@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Quickstart &#8212; Plone Documentation  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="install/installation.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-abstract admonition">
+<p class="first admonition-title">Abstract</p>
+<p class="last">A quick overview to get you up and running with <a class="reference external" href="https://plone.org">Plone</a>.</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#online-demo-sites" id="id2">Online Demo Sites</a></li>
+<li><a class="reference internal" href="#plone-on-your-own-machine" id="id3">Plone On Your Own Machine</a></li>
+<li><a class="reference internal" href="#deployment" id="id4">Deployment</a><ul>
+<li><a class="reference internal" href="#alternative-ways-to-deploy" id="id5">Alternative Ways To Deploy</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="online-demo-sites">
+<h2>Online Demo Sites<a class="headerlink" href="#online-demo-sites" title="Permalink to this headline">¶</a></h2>
+<p>Online demo sites allow users to experience the look and feel of Plone as well as check out its ease of use and features.</p>
+<p>These sites let users log in using a variety of roles so they can see the difference between what users, editors,
+and administrators see when working in Plone.</p>
+<p>You can find a list of available online demo sites at the <a class="reference external" href="https://plone.com/try-plone">Try Plone section</a> on <a class="reference external" href="https://plone.com">plone.com</a>.</p>
+<p>Another interesting approach to try out Plone is to install it in a cloud service.</p>
+<p>That way, you can set up your own demo (or even light-weight production) Plone,
+which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group.</p>
+<p>Here are two blog posts that show you how to do this: <a class="reference external" href="http://blog.niteoweb.com/dear-plone-welcome-to-year-2014/">Plone on a free-tier Heroku</a>
+by Nejc Zupan and <a class="reference external" href="http://blog.dbain.com/2015/09/installing-plone-5-on-cloud9-ide.html">Installing Plone 5 on Cloud9 IDE</a> by David Bain.</p>
+</div>
+<div class="section" id="plone-on-your-own-machine">
+<h2>Plone On Your Own Machine<a class="headerlink" href="#plone-on-your-own-machine" title="Permalink to this headline">¶</a></h2>
+<p>You can find the download options at <a class="reference external" href="https://plone.org/download">plone.org/download</a></p>
+<p>The recommended and best supported way to deploy Plone, both for laptops as well as servers, is the <a class="reference external" href="https://plone.org/download">Unified Installer</a>.
+It can provide you both with a single instance with developer tools installed, as well as with multiple failover clients running against a database server.</p>
+<p>What this means it that it will scale from quick evaluation to development to deployment, which will make your experience easier.</p>
+<p>The catch is that the Unified Installer works on Linux and Unix-like systems (including macOS and other BSD’s), not Windows.</p>
+<p>For Windows, there is a currently no binary installer for Plone 6 available, though we anticipate to have one in the future.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Update above we have now a windows installer</p>
+</div>
+<p>In all honesty it must be said that this is not the ideal way to work with Plone if you want to <em>develop</em> with it.</p>
+<p>A large portion of the toolchain is not readily available on Windows environments.</p>
+<p>There is a highly workable alternative: Using <strong>virtual machines</strong>.</p>
+<p>The latest release of Plone also comes as a VirtualBox / Vagrant image.</p>
+<p>This will install a fully-working Plone for you in a virtual machine,
+but integrated with the host so that all your favorite Windows editing and development tools work.</p>
+<p>If you want to develop with Plone on a Windows machine, that would be your easiest option.</p>
+<p>For macOS users we also advise to use virtual machines for casual testing, and the installation of the Universal.</p>
+<p>The Unified Installer works just fine under macOS.</p>
+<p>You can find all information on using these different options at the <a class="reference external" href="https://docs.plone.org/manage/index.html">Installation</a> chapter in the “Managing,
+Administration” section of these docs.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Change link above to local document.</p>
+</div>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add docker here, too !</p>
+</div>
+<p>Or, head straight to <a class="reference external" href="https://plone.org/download">plone.org/download</a> to get started now!</p>
+</div>
+<div class="section" id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+<p>Any deployment of Plone as a real-world site will usually entail setting up some more software.
+In almost all cases, you will want to have a webserver like Nginx or Apache in front, and a cache like Varnish to optimize response times.</p>
+<p>Depending on your needs, you might also want redundant, high-availability options like ha-proxy,
+and monitoring tools to monitor things and notify you when trouble arises.</p>
+<p>A good selection of these tools is described  in the <a class="reference external" href="https://docs.plone.org/manage/index.html">Guide to deploying and installing Plone in production</a>.</p>
+<div class="admonition-todo admonition" id="index-3">
+<p class="first admonition-title">Todo</p>
+<p class="last">Fix link above to local document.</p>
+</div>
+<div class="section" id="alternative-ways-to-deploy">
+<h3>Alternative Ways To Deploy<a class="headerlink" href="#alternative-ways-to-deploy" title="Permalink to this headline">¶</a></h3>
+<p>The Unified Installer itself is based on <a class="reference external" href="http://www.buildout.org">buildout</a>.</p>
+<p>If you’re working with Plone, it is a good idea to get familiar with this tool and the relation with other Python module management tools.</p>
+<p>Buildout can be used in a variety of ways, and many people use it to tweak their own development-instances and/or deployment instances.
+See <a class="reference external" href="https://github.com/starzel/buildout">starzel.buildout</a> for a rather maximized example.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">However, that your chances of <a class="reference internal" href="contributing/ask-for-help.html"><span class="doc">getting help</span></a> on setup questions in the Plone support channels
+(IRC, Gitter, community.plone.org) increase when other people can reproduce your outcomes, which is most efficiently done with the Unified Installer.</p>
+</div>
+<p>Besides that, there are many people deploying Plone as part of other deployment tools, be they Ansible, Salt, Chef, Puppet or the like.</p>
+<p>If you are familiar with these, you will most likely find others in the Plone community that share your enthusiasm.</p>
+<p>There is an <a class="reference external" href="https://github.com/plone/ansible-playbook">Ansible playbook</a>, maintained by the Plone community,
+that can completely provision a remote machine to run a full-stack, production-ready Plone server with all the bells and whistles.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Plone Documentation</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=plone&repo=documentation&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">About:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#online-demo-sites">Online Demo Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plone-on-your-own-machine">Plone On Your Own Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment">Deployment</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Install:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install/installation.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing/issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing/style-guide.html">Style Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing/ask-for-help.html">Asking For Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">Documentation License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">Todo List</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="install/installation.html" title="next chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

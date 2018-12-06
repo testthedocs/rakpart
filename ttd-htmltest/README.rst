@@ -40,7 +40,7 @@ Run The Test
 
 .. code-block shell
 
-   docker run -it -v `pwd`:/build/docs testthedocs/ttd-htmltest
+   docker run -it -v `pwd`:/srv/test testthedocs/ttd-htmltest
 
 
 .. image:: docs/_static/ttd-htmltest.png

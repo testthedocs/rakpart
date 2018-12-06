@@ -1,28 +1,28 @@
-FROM alpine:latest
+FROM alpine:3.8
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV HTMLTEST_VERSION 0.6.0
 
 RUN builddeps=' \
     curl \
     ca-certificates \
     ' \
-    && adduser -s /bin/false -D -H ttduser \
+    && adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
     $builddeps \
     bash \
     tini \
     su-exec \
-    && curl -kLo /usr/local/bin/htmltest https://github.com/wjdp/htmltest/releases/download/v0.6.0/htmltest-linux \
+    && curl -kLo /usr/local/bin/htmltest https://github.com/wjdp/htmltest/releases/download/v0.10.1/htmltest_0.10.1_linux_amd64.tar.gz \
     && chmod +x /usr/local/bin/htmltest
     #&& apk del --purge $builddeps
 
-VOLUME ["/build/docs"]
+VOLUME ["/srv"]
 
-WORKDIR /build
+WORKDIR /srv
 
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY htmltest.yml /build/.htmltest.yml
+COPY htmltest.yml /srv/.htmltest.yml
 
 #ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash"]

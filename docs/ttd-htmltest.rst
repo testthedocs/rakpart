@@ -8,7 +8,6 @@ TTD HTML
 
 Based on: `htmltest <https://github.com/wjdp/htmltest>`_.
 
-
 .. note::
 
    Currently this check if configured for *rst* and *Sphinx* **only** !
@@ -34,10 +33,7 @@ You can find more information in the `htmltest repository <https://github.com/wj
 
 .. code-block:: shell
 
-   docker run -it -v `pwd`:/build/docs testthedocs/ttd-htmltest
-
-
-If you have any validations `ttd-mdlint` will report them.
+   docker run -it -v `pwd`:/srv/test testthedocs/ttd-htmltest
 
 Source Code
 ===========

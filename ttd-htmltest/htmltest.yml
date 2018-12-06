@@ -1,4 +1,5 @@
-directoryPath: "_build/html"
+#directoryPath: "_build/html"
+directoryPath: "test"
 EnforceHTTPS: false
 IgnoreInternalEmptyHash: true
 IgnoreCanonicalBrokenLinks: true
@@ -7,7 +8,9 @@ CheckScripts: false
 IgnoreDirectoryMissingTrailingSlash: true
 IgnoreURLs:
 - "example.com"
+- "localhost"
 IgnoreDirs:
 - "lib"
+- "_static"
 CacheExpires: "6h"
 

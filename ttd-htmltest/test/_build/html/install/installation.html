@@ -1,0 +1,375 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &#8212; Plone Documentation  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Issues" href="../contributing/issues.html" />
+    <link rel="prev" title="Quickstart" href="../quickstart.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-abstract admonition">
+<p class="first admonition-title">Abstract</p>
+<p class="last">This document covers the basics of installing Plone on popular operating systems.
+It will also point you to other documents for more complex or demanding installations.</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#download-plone" id="id1">Download Plone</a></li>
+<li><a class="reference internal" href="#plone-installation-requirements" id="id2">Plone Installation Requirements</a></li>
+<li><a class="reference internal" href="#how-to-install-plone" id="id3">How To Install Plone</a><ul>
+<li><a class="reference internal" href="#plone-unified-unix-installer" id="id4">Plone Unified UNIX Installer</a></li>
+<li><a class="reference internal" href="#microsoft-windows" id="id5">Microsoft Windows</a></li>
+<li><a class="reference internal" href="#virtualbox-vagrant" id="id6">VirtualBox/Vagrant</a></li>
+<li><a class="reference internal" href="#installing-plone-on-macos" id="id7">Installing Plone On macOS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#libxml2-libxslt-versions" id="id8">LibXML2/LibXSLT Versions</a></li>
+<li><a class="reference internal" href="#debug-mode" id="id9">Debug Mode</a></li>
+<li><a class="reference internal" href="#installer-source-code" id="id10">Installer Source Code</a></li>
+</ul>
+</div>
+<p>Plone runs as an application on the Zope application server.
+That server is installed automatically by the install process.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>We strongly advise against installing Plone via OS packages.</p>
+<p>There is no .rpm, .deb, or BSD port that is supported by the Plone community.</p>
+<p class="last">Plone dependencies can and should be installed via package or port – but not Plone itself.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For installing and running Plone on CentOS, please make sure that you have enough Memory and Swap.</p>
+<p>If you use the Unified Installer on CentOS, make sure that you have at least 1024 MB of Memory.</p>
+<p class="last">Building lxml is resource consuming.</p>
+</div>
+<div class="section" id="download-plone">
+<h2>Download Plone<a class="headerlink" href="#download-plone" title="Permalink to this headline">¶</a></h2>
+<p>Plone is available for macOS, Windows, Linux and BSD operating systems.</p>
+<p><a class="reference external" href="https://plone.org/download">Download the latest Plone release</a>.</p>
+<p>From here, you can also find links to the Vagrant install kit (if you wish to install Plone for evaluation or development on a Windows,
+macOS or any other machine that supports VirtualBox and Vagrant).</p>
+<p>Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer.
+“Unified” refers to its ability to install on most Unix workalikes.</p>
+</div>
+<div class="section" id="plone-installation-requirements">
+<h2>Plone Installation Requirements<a class="headerlink" href="#plone-installation-requirements" title="Permalink to this headline">¶</a></h2>
+<p>See $HERE_LINK_TO_FILE for detailed requirements.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Fix above</p>
+</div>
+<ul class="simple">
+<li>You need at least a dedicated or virtual private server (VPS) with 512 MB RAM available.
+Shared hosting is not supported unless the shared hosting company says Plone is good to go.</li>
+</ul>
+</div>
+<div class="section" id="how-to-install-plone">
+<h2>How To Install Plone<a class="headerlink" href="#how-to-install-plone" title="Permalink to this headline">¶</a></h2>
+<p>Plone can run on all popular desktop or server operating systems, including Linux, macOS, BSD and Microsoft Windows.</p>
+<ul class="simple">
+<li>You can install Plone on a server for production usage</li>
+<li>You can install Plone locally on your own computer for development and test drive</li>
+</ul>
+<div class="section" id="plone-unified-unix-installer">
+<h3>Plone Unified UNIX Installer<a class="headerlink" href="#plone-unified-unix-installer" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Running Plone in <strong>production</strong> will normally also entail other software for optimal security and performance,
+like a front-end webserver, caching, and firewall.</p>
+<p class="last">See /manage/deploying/production/index&gt;, and you may also be interested in &lt;/external/ansible-playbook/docs/index&gt;.</p>
+</div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Fix above</p>
+</div>
+<p>This recipe is good for:</p>
+<ul class="simple">
+<li>Plone development and testing on Ubuntu / Debian</li>
+<li>Operating system installations where you have administrator (root) access.
+Note that root access is not strictly necessary as long as you have required software installed beforehand on the server,
+but this tutorial assumes you need to install the software yourself and you are the admin.
+If you don’t have the ability to install system libraries, you’ll need to get your sysadmin to do it for you.
+The libraries required are in common use.</li>
+</ul>
+<p>The resulting installation is self-contained, does not touch system files, and is safe to play with (no root/sudoing is needed).</p>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add docs about requirements, like we have in the old docs</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If the <strong>sudo</strong> command is not recognized or does not work you don’t have administrator rights on your operating system.</p>
+<p class="last">Please contact your server vendor or consult the operating system support forum.</p>
+</div>
+<p>You will probably also want these optional system packages for handling of PDF and Office files:</p>
+<div class="admonition-todo admonition" id="index-3">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add here docs/links for “extra” like we have in the old docs</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>libreadline-dev</strong> or <strong>readline-devel</strong> is only necessary if you wish to build your own python rather than use your system’s python 2.7.</p>
+</div>
+<div class="admonition-todo admonition" id="index-4">
+<p class="first admonition-title">Todo</p>
+<p class="last">[svx] I removed the note about git and development, this should be ina own section and not here</p>
+</div>
+<div class="section" id="download-the-latest-plone-installer">
+<h4>Download The Latest Plone Installer<a class="headerlink" href="#download-the-latest-plone-installer" title="Permalink to this headline">¶</a></h4>
+<p>Download from <a class="reference external" href="http://plone.org/download">the plone.org download page</a> to your server using wget command.</p>
+<p>Curl also works.</p>
+<p>Substitute the latest version number for 5.0 in the instructions below.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.4/+download/Plone-5.0.4-UnifiedInstaller.tgz
+</pre></div>
+</div>
+</div>
+<div class="section" id="plone-installer-in-standalone-mode">
+<h4>Plone Installer In Standalone Mode<a class="headerlink" href="#plone-installer-in-standalone-mode" title="Permalink to this headline">¶</a></h4>
+<p>Extract the downloaded file</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tar -xf Plone-5.0.4-UnifiedInstaller.tgz
+</pre></div>
+</div>
+<p>Go the folder containing installer script</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Plone-5.0.4-UnifiedInstaller
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This will run the installer without any extra options, like setting passwords,
+setting the install path or anything else, for a full overview over all the possible options use <code class="docutils literal notranslate"><span class="pre">./install.sh</span> <span class="pre">--help</span></code>.</p>
+</div>
+<p>Run script</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./install.sh
+</pre></div>
+</div>
+<p>Please follow the instructions on the screen</p>
+<img alt="Shows installer welcome message" src="../_images/install_gui_1.png" />
+<p>We choose here for the <code class="docutils literal notranslate"><span class="pre">standalone</span></code> mode</p>
+<img alt="Shows menu to choose between standalone and zeo" src="../_images/install_gui_2.png" />
+<p>Accept the default installation target or change the path</p>
+<img alt="Shows menu to set installation target" src="../_images/install_gui_3.png" />
+<p>Choose a password option</p>
+<img alt="Shows password menu" src="../_images/install_gui_4.png" />
+<p>Control the settings to make sure everything is as you want it</p>
+<img alt="Show overview about password and target dir" src="../_images/install_gui_5.png" />
+<p>Wait till the installer is done</p>
+<img alt="Shows installer in progess" src="../_images/install_gui_6.png" />
+<img alt="Show that installer is finished" src="../_images/install_gui_7.png" />
+<p>The default admin credentials will be printed to the console, and saved in the file <em>adminPassword.txt</em> in the resulting install.
+You can change this password after logging in to the Management Interface.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The password is also written down in the <em>buildout.cfg</em> file, but this
+setting is not effective after Plone has been started for the first time.
+Changing this setting does not do any good.</p>
+</div>
+</div>
+<div class="section" id="start-plone">
+<h4>Start Plone<a class="headerlink" href="#start-plone" title="Permalink to this headline">¶</a></h4>
+<p>If you’re developing, start Plone in foreground mode for a test run (you’ll see potential errors in the console):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Plone/zinstance
+bin/plonectl <span class="nb">fg</span>
+</pre></div>
+</div>
+<p>When you start Plone in the foreground, it runs in debug mode, which is much slower than production mode since it reloads templates for every request.</p>
+<p>For evaluation, instead use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Plone/zinstance
+bin/plonectl start
+</pre></div>
+</div>
+<p>Use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Plone/zinstance
+bin/plonectl stop
+</pre></div>
+</div>
+<p>to stop the instance.</p>
+<p>By default, Plone will listen to port 8080 on available network interfaces.</p>
+<p>The port may be changed by editing buildout.cfg and re-running buildout.</p>
+</div>
+<div class="section" id="you-ve-got-plone">
+<h4>You’ve Got Plone<a class="headerlink" href="#you-ve-got-plone" title="Permalink to this headline">¶</a></h4>
+<p>Now take a look at your Plone site by visiting the following address in your webbrowser <a class="reference external" href="http://localhost:8080">http://localhost:8080</a></p>
+<p>The greeting page will let you create a new site.
+For this you need the login credentials printed to your terminal earlier, also available at <em>~/Plone/zinstance/adminPassword.txt</em>.</p>
+<p>If everything is OK, press <code class="docutils literal notranslate"><span class="pre">CTRL-C</span></code> in the terminal to stop Plone if you’re running in debug mode.
+Use <code class="docutils literal notranslate"><span class="pre">plonectl</span> <span class="pre">stop</span></code> if you did not start in debug mode.</p>
+<p>If you have problems, please see the <a class="reference external" href="http://plone.org/help">help guidelines</a>.</p>
+<p>For automatic start-up when your server boots up, init scripts, etc.
+please see the file &lt;/manage/deploying/production/index&gt;.</p>
+</div>
+</div>
+<div class="section" id="microsoft-windows">
+<h3>Microsoft Windows<a class="headerlink" href="#microsoft-windows" title="Permalink to this headline">¶</a></h3>
+<p>Beginning with Plone 5.1.4, the Unified Installer will install Plone on Windows 10.
+Windows installation instructions vary from Linux/Unix instructions!
+See the <a class="reference external" href="https://github.com/plone/Installers-UnifiedInstaller/blob/master/docs/windows.rst">Windows-specific installation instructions</a> that are included with the installer.</p>
+<p>For earlier versions of Plone 5, you have the <a class="reference external" href="https://github.com/plone/WinPloneInstaller/">Windows installer</a> or the <a class="reference external" href="https://github.com/plone/plonedev.vagrant">Vagrant kit</a></p>
+<p>For the Plone 4.3 series, there is a <a class="reference external" href="https://plone.org/products/plone/releases/4.3.6">binary installer</a>.</p>
+</div>
+<div class="section" id="virtualbox-vagrant">
+<h3>VirtualBox/Vagrant<a class="headerlink" href="#virtualbox-vagrant" title="Permalink to this headline">¶</a></h3>
+<p>This is the recommended method if you want to try Plone for the first time.</p>
+<p>Please use the installer from the download page <a class="reference external" href="https://plone.org/products/plone/releases">https://plone.org/products/plone/releases</a>.</p>
+</div>
+<div class="section" id="installing-plone-on-macos">
+<h3>Installing Plone On macOS<a class="headerlink" href="#installing-plone-on-macos" title="Permalink to this headline">¶</a></h3>
+<p>Installation via the Unified Installer or buildout is similar to Unix.
+However, you will need to install a command-line build environment.</p>
+<p>To get a free build kit from Apple, do one of the following:</p>
+<ul class="simple">
+<li>Download gcc and command-line tools from <a class="reference external" href="https://developer.apple.com/">https://developer.apple.com/</a>.
+This will require an Apple developer id.</li>
+<li>Install Xcode from the App Store. After installation, visit the Xcode
+App’s preference panel to download the command-line tools.</li>
+</ul>
+<p>After either of these steps, you immediately should be able to install Plone using the Unified Installer.</p>
+<p>Proceed as with Linux.</p>
+</div>
+</div>
+<div class="section" id="libxml2-libxslt-versions">
+<h2>LibXML2/LibXSLT Versions<a class="headerlink" href="#libxml2-libxslt-versions" title="Permalink to this headline">¶</a></h2>
+<p>Don’t worry about this if you’re using an installer.</p>
+</div>
+<div class="section" id="debug-mode">
+<h2>Debug Mode<a class="headerlink" href="#debug-mode" title="Permalink to this headline">¶</a></h2>
+<p>When you have Plone installed and want to start development you need do &lt;/develop/plone/getstarted/debug_mode&gt;.</p>
+</div>
+<div class="section" id="installer-source-code">
+<h2>Installer Source Code<a class="headerlink" href="#installer-source-code" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/plone/Installers-UnifiedInstaller">https://github.com/plone/Installers-UnifiedInstaller</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Plone Documentation</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=plone&repo=documentation&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">About:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Install:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-plone">Download Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plone-installation-requirements">Plone Installation Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-install-plone">How To Install Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libxml2-libxslt-versions">LibXML2/LibXSLT Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug-mode">Debug Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installer-source-code">Installer Source Code</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/style-guide.html">Style Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/ask-for-help.html">Asking For Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Documentation License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo List</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../quickstart.html" title="previous chapter">Quickstart</a></li>
+      <li>Next: <a href="../contributing/issues.html" title="next chapter">Issues</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
