@@ -24,12 +24,13 @@ Pull the image:
 
    docker pull testthedocs/ttd-mdlint
 
-Usage
+
+   Usage
 =====
 
 .. code-block:: shell
 
-   docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-mdlint
+   docker run -v `pwd`:/srv/docs testthedocs/ttd-mdlint
 
 Contribute
 ==========
