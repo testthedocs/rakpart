@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+# Checking for a given list of files and directories.
+# Usage: ./check-repo.sh [option]
+# Options: md, rst, help
+
+set -e
+
+# Vars
+# Color
+ESC_SEQ="\x1b["
+COL_RESET=$ESC_SEQ"39;49;00m"
+COL_YELLOW=$ESC_SEQ"33;01m"
+COL_RED=$ESC_SEQ"31;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
+# Other
+CHECK_FILES='VERSION Makefile .dockerignore .gitignore LICENSE'
+CHECK_DIRS='dockerfiles'
+CHECK_RST='README.rst CHANGELOG.rst'
+CHECK_MD='README.md CHANGELOG.md'
+
+# Functions
+# Error
+error_exit() {
+    echo -en "$COL_RED$1$COL_RESET" 1>&2
+    exit 1
+}
+
+# Check files
+file_check() {
+    echo -en "$COL_YELLOW Checking files ...$COL_RESET\n"
+    for file in $CHECK_FILES
+    do
+        if [ ! -f "$file" ]; then
+            echo -en "$COL_RED Cannot detect $file $COL_RESET\n"
+            exit 1
+    fi
+    done
+}
+
+dir_check() {
+    echo -en "$COL_YELLOW Checking directories ...$COL_RESET\n"
+    for dir in $CHECK_DIRS
+    do
+        if [ ! -d "$dir" ]; then
+            echo -en "$COL_RED Cannot detect $dir $COL_RESET\n"
+            exit 1
+        fi
+    done
+}
+
+check_rst_files() {
+    echo -en "$COL_YELLOW Checking rst ...$COL_RESET\n"
+    for file in $CHECK_RST
+    do
+        if [ ! -f "$file" ]; then
+            echo -en "$COL_RED Cannot detect $file $COL_RESET\n"
+            exit 1
+    fi
+    done
+}
+
+check_md_files() {
+    echo -en "$COL_YELLOW Checking md ...$COL_RESET\n"
+    for file in $CHECK_MD
+    do
+        if [ ! -f "$file" ]; then
+            echo -en "$COL_RED Cannot detect $file $COL_RESET\n"
+            exit 1
+    fi
+    done
+}
+
+show_help() {
+    echo -en "$COL_GREEN Usage: ./check-repo.sh [md, rst, help]$COL_RESET\n"
+    echo ""
+    echo -en "$COL_GREEN Example for rst: ./check-repo.sh rst$COL_RESET\n"
+    exit 1
+}
+
+
+# Run checks
+if [[ "$1" = md ]]; then
+    dir_check
+    check_md_files
+fi
+
+if [[ "$1" = rst ]]; then
+    dir_check
+    check_rst_files
+fi
+
+if [[ "$1" = help ]]; then
+    show_help
+fi
+
+if [[ $# -eq 0 ]] ; then
+    show_help
+fi
+
+exit 0

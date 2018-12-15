@@ -4,7 +4,7 @@ TTD Repo
 
 Validation checks, to make sure to follow always the same (our) repository style guide.
 
-Currently only ``rst`` is supported.
+Currently only ``rst`` and ``md`` are supported.
 
 
 Features
@@ -36,15 +36,21 @@ Run `ttd-repo` from the main directory of your repoitory:
 
 .. code-block:: shell
 
-   docker run -it -v `pwd`:/srv/data testthedocs/ttd-repo
+   docker run -it -v `pwd`:/srv testthedocs/ttd-repo [option]
+
+Check for ``md``:
+
+.. code-block:: shell
+
+   docker run -it -v `pwd`:/srv testthedocs/ttd-repo --md
 
 Checks
 ------
 
 File checks for:
 
-- README.rst
-- CHANGES.rst
+- README.rst/md
+- CHANGELOG.rst/md
 - VERSION
 - Makefile
 - .dockerignore

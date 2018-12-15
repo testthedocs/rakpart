@@ -4,7 +4,7 @@ LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY repo-rst.sh /usr/local/bin/repo-rst.sh
+COPY check-repo.sh /usr/local/bin/check-repo.sh
 
 RUN adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
@@ -13,7 +13,7 @@ RUN adduser -s /bin/false -D -H ttd \
     bash \
     ncurses
 
-VOLUME ["/srv/data"]
+VOLUME ["/srv/"]
 
 WORKDIR /srv
 
