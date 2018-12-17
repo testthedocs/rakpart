@@ -23,14 +23,15 @@ Pull the image:
 
    docker pull testthedocs/ttd-vale
 
-Usage
+
+   Usage
 =====
 
 Run `ttd-vale` from in your docs directory:
 
 .. code-block:: shell
 
-   docker run -v $(pwd)/docs:/srv/docs testthedocs/ttd-vale
+   docker run -it -v `pwd`:/srv/tests testthedocs/ttd-vale
 
 Contribute
 ==========
