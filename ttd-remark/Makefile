@@ -9,7 +9,7 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 # Name
-NAME = testthedocs/ttd-remark-lint
+NAME = testthedocs/ttd-remark
 # Get version form VERSION
 VERSION := $(shell cat VERSION)
 DOCKER := $(bash docker)
