@@ -2,6 +2,11 @@
 Changelog
 =========
 
+0.0.3
+=====
+
+- Silence output [svx]
+
 0.0.2
 =====
 

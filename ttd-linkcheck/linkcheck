@@ -211,7 +211,7 @@ gather_urls() {
 	fi
 
 	find_cmd="find ${path}${find_ext} -type f -exec grep -IEo '${reg_include}' '{}' \\; | sort -u"
-	>&2 echo "\$ ${find_cmd}"
+	>&2 #echo "\$ ${find_cmd}"
 
 	# Loop through uniqued URLs
 	for url in $(eval "${find_cmd}" 2>/dev/null); do
