@@ -13,6 +13,7 @@ Nevertheless, you can use them locally, too.
    :caption: Checks:
 
    ttd-mdlint
+   ttd-remark
    ttd-tab
    ttd-toctree
    ttd-ts

@@ -40,8 +40,10 @@ check-links: ## Run linkcheck, ignoring "localhost"
 	@docker run -it -v "${PWD}/docs":/srv/test testthedocs/ttd-linkcheck
 
 .PHONY: check-toctree
-check-toctree: ## Checks for for multiple :numbered: entries in toctrees
+check-toctree: ## Checks for for multiple "number entries" in toctrees
 	@echo "$(YELLOW)==> Checking toctree entries ...$(RESET)"
-	@docker run -it -v "${PWD}/docst":/build/docs testthedocs/ttd-toctree
+	@docker run -it -v "${PWD}/docs":/build/docs testthedocs/ttd-toctree
 
-
+.PHONY: new-check
+new-check: ## Creates boilperplate of a new check using narvin
+	@docker run -it -v "${PWD}":/srv/data testthedocs/marvin create-rakpart-check
