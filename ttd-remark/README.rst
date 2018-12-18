@@ -6,7 +6,7 @@ Docker image for `remark-lint <https://github.com/remarkjs/remark-lint>`_ markdo
 
 This image uses the container `zemanlx/remark-lint <https://github.com/zemanlx/remark-lint>`_ as base.
 
-The only difference is that that *ttd-remark-lint* includes `Tini <https://github.com/krallin/tini>`_, `su-exec <https://github.com/ncopa/su-exec>`_ and runs as *ttd* user.
+The only difference is that that *ttd-remark-lint* includes `Tini <https://github.com/krallin/tini>`_ and runs as *ttd* user.
 
 Dependencies
 ============
