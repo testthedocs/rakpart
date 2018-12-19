@@ -16,7 +16,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'Rakpart'
@@ -30,6 +29,8 @@ release = '0.0.1'
 
 def setup(app):
     app.add_stylesheet('custom.css')
+    app.add_javascript("custom.js")
+    app.add_javascript("https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js")
 
 # -- General configuration ---------------------------------------------------
 
