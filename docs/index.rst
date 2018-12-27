@@ -4,12 +4,25 @@ Rakpart
 
 Writing documentation is hard, testing and checking is even harder.
 
-The main focus is CI (Continuous Integration).
-Nevertheless, you can use them locally, too.
+About
+=====
+
+Container based checks for QA (Quality Assurance).
+
+*Rakpart* is a collection of *checks* which help to improve the quality of your docs.
+
+The main focus is on `reStructuredText <https://en.wikipedia.org/wiki/ReStructuredText>`_ and `Markdown <https://en.wikipedia.org/wiki/Markdown>`_
+based documentation.
+
+You can run the checks locally and on CI (Continuous Integration).
+
+Dependencies
+=============
+
+- `Docker <https://docker.com>`_
 
 .. toctree::
    :hidden:
-   :glob:
    :maxdepth: 2
    :caption: Markdown:
 
@@ -21,30 +34,32 @@ Nevertheless, you can use them locally, too.
    :maxdepth: 2
    :caption:  reStructuredText:
 
-   ttd-doc8
-   ttd-toctree
+   Doc8 <ttd-doc8>
+   Toctree <ttd-toctree>
 
 .. toctree::
    :hidden:
    :maxdepth: 2
    :caption:  Other:
 
-   ttd-tab
-   ttd-ts
-   ttd-textlint
-   ttd-vale
-   ttd-htmltest
-   ttd-linkcheck
-   ttd-repo
+   HTML Test <ttd-htmltest>
+   Link Checker <ttd-linkcheck>
+   Repository Check <ttd-repo>
+   Tab <ttd-tab>
+   Trailing Space <ttd-ts>
+   Textlint <ttd-textlint>
+   Vale <ttd-vale>
 
 .. toctree::
    :hidden:
    :maxdepth: 2
    :caption: Contribute:
 
-   create-a-check
-   style-guide
-   commit-guidelines
    code-of-conduct
+   create-a-check
+   commit-guidelines
    docker
+   style-guide
+   GitHub <https://github.com/testthedocs/rakpart>
+   Contact <https://docs.testthedocs.org/communication.html>
 
