@@ -9,19 +9,32 @@ Nevertheless, you can use them locally, too.
 
 .. toctree::
    :hidden:
+   :glob:
    :maxdepth: 2
-   :caption: Checks:
+   :caption: Markdown:
 
-   ttd-mdlint
-   ttd-remark
-   ttd-tab
+   Markdown Lint <ttd-mdlint>
+   Remark Lint <ttd-remark>
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption:  reStructuredText:
+
+   ttd-doc8
    ttd-toctree
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption:  Other:
+
+   ttd-tab
    ttd-ts
    ttd-textlint
    ttd-vale
    ttd-htmltest
    ttd-linkcheck
-   ttd-doc8
    ttd-repo
 
 .. toctree::
