@@ -8,9 +8,9 @@ Style Guide
 
 Bash
 ====
-
+- Scripts are formated with `shfmt <https://github.com/mvdan/sh/>`_, following `Google's Style Guide <https://google.github.io/styleguide/shell.xml/>`_, ``shfmt -i 2 -ci``.
 - Make sure to test against `shellcheck <https://www.shellcheck.net/>`_.
-- Scripts should fail on errors (``exit1``)
+- Scripts should fail on errors (``exit 1``)
 
 Color Variables
 ---------------
