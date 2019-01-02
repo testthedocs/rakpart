@@ -1,4 +1,5 @@
 #!/bin/sh
+set -euo pipefail
 
 #exec su-exec $@
 # Re-set permission to the `testuser` user
