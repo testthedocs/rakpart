@@ -16,6 +16,7 @@ based documentation.
 
 You can run the checks locally and on CI (Continuous Integration).
 
+
 Dependencies
 =============
 
@@ -60,6 +61,7 @@ Dependencies
    commit-guidelines
    docker
    style-guide
+   Docs Style Guide <https://docs.testthedocs.org/style-guide.html>
    GitHub <https://github.com/testthedocs/rakpart>
    Contact <https://docs.testthedocs.org/communication.html>
 
