@@ -14,7 +14,7 @@ RUN builddeps=' \
     $builddeps \
     python-docutils \
     gosu \
-    && curl https://htmltest.wjdp.uk | sudo bash -s -- -b /usr/local/bin \
+    && curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
