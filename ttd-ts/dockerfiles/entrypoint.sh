@@ -1,6 +1,5 @@
 #!/bin/bash
-set -e
-
+set -eo pipefail
 
 
 # Check if we have a index.rst, if not exit
