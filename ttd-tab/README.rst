@@ -2,7 +2,7 @@
 TTD Tab
 =======
 
-Containerised application for checking trailing spaces on line ends.
+Containerised application for checking tabs.
 
 Features
 ========
