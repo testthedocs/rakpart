@@ -1,4 +1,4 @@
-FROM alpine:3.8 as builder
+FROM alpine:3.8 as fetcher
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
@@ -16,9 +16,9 @@ FROM alpine:3.8
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV VALE_VERSION 1.2.6
+ENV VALE_VERSION 1.2.7
 
-COPY --from=builder /srv/vale-styles /srv/vale-styles
+COPY --from=fetcher /srv/vale-styles /srv/vale-styles
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY .vale.ini /srv/.vale.ini
 
