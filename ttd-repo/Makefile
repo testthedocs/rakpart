@@ -37,8 +37,14 @@ last_built_date: ## Show last build date
 	docker inspect -f '{{ .Created }}' $(NAME):$(VERSION)
 
 .PHONY: release
-release: check_release_version build tag_latest push ## Combine steps to make release
+release: check_release_version build tag_latest push tag_github ## Combine steps to make release
 
 .PHONY: check_release_version
 check_release_version:
 	@if docker images $(NAME) | awk '{ print $$2 }' | grep -q -F $(VERSION); then echo "$(RED)$(NAME) version $(VERSION) is already build !$(RESET)"; false; fi
+
+.PHONY: tag_github
+tag_github: ## Tags the commit on GitHub with version nr.
+	@git tag -a $(NAME)-$(VERSION) -m "[release] $(VERSION) of $(NAME)" || true
+	@git push origin $(NAME)$(VERSION)
+
