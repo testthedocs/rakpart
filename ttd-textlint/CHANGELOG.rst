@@ -2,6 +2,13 @@
 Changelog
 =========
 
+0.0.4
+=====
+
+- Cleanup Dockerfile [svx]
+- Rename CHANGES.rst -> Changelog.rst [svx]
+- Improve enrtpoint script [svx]
+
 0.0.3
 =====
 

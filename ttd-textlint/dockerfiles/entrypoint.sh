@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -eo pipefail
 
 #exec su-exec $@
 # Re-set permission to the `ttd` user

@@ -1,4 +1,3 @@
-#FROM alpine:3.8
 FROM node:10.7-alpine
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
