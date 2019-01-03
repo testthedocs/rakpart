@@ -24,7 +24,7 @@ Pull the image:
    docker pull testthedocs/ttd-vale
 
 
-   Usage
+Usage
 =====
 
 Run `ttd-vale` from in your docs directory:
