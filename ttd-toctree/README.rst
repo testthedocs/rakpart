@@ -53,7 +53,7 @@ Run The Test
 Contribute
 ==========
 
-- `Issue Tracker <github.com/testthedocs/rakpart/issues>`_
+- `Issue Tracker <htttps://github.com/testthedocs/rakpart/issues>`_
 - `Source Code <https://github.com/testthedocs/rakpart/tree/master/ttd-toctree>`_
 
 Support
