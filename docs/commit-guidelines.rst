@@ -31,10 +31,10 @@ Merge Vs Rebase
 
 That means that every commit on its own should be a clear, functional, and stable change.
 
-This means then when you’re building a new feature, you should try to pare it down into functional steps,
+This means then when you are building a new feature, you should try to pare it down into functional steps,
 and when that’s not reasonable, the end patch should be a single commit.
 
-This is counter to having a Pull Request which may include “[fix] unmerged behavior”.
+This is counter to having a Pull Request which may include “fix unmerged behavior”.
 
 Those commits should get squashed, and the final patch when landed should be rebased.
 
@@ -54,14 +54,21 @@ Commit messages should be short, clear and "to the point".
 
    [docs] Add docs about ttd-repo
 
+.. code-block:: bash
+
+   [release] ttd-repo 0.0.8
+
+.. code-block:: bash
+
+   [ttd-repo] Improve Dockerfile
+
 Type
 ----
 
 Must be one of the following:
 
 :[docs]:	Documentation only changes
-:[fix]: 	A bug fix
-:[test]:	Adding missing tests or correcting existing tests
 :[ci]:  	Changes to our CI configuration files and scripts
 :[meta]:	Some meta information in the repo changes (example scopes: owner files, editor config etc.)
 :[release]: Making a new release
+:[$CHECK]: Make clear for which check the commit is (examples: [ttd-repo], [ttd-tab] etc.) 
