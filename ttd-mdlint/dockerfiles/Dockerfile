@@ -3,7 +3,7 @@ FROM node:10.7-alpine
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY config.json /srv
 
 RUN adduser -s /bin/false -D -H ttd \

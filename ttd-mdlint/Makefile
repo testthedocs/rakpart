@@ -30,7 +30,7 @@ help: ## This help message
 
 .PHONY: build
 build: ## Builds docker image
-	docker build --rm --no-cache=true -t $(NAME):$(VERSION) .
+	docker build --no-cache=true -t $(NAME):$(VERSION) --rm -f dockerfiles/Dockerfile .
 
 .PHONY: push
 push: ## Pushes images

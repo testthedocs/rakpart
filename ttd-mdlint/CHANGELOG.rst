@@ -2,6 +2,12 @@
 Changelog
 =========
 
+0.0.6-dev
+=========
+
+- Improve Makefile - Fix #70
+- Improve directory setup - Fix #67 
+
 0.0.5
 =====
 
