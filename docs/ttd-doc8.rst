@@ -24,7 +24,7 @@ Navigate to the directory containing your reStructuredText (.rst) or markdown (.
 
 .. code-block:: shell
 
-    docker run -it -v `pwd`:/srv/data testthedocs/doc8
+    docker run -it -v `pwd`:/srv/data testthedocs/ttd-doc8
 
 Checks
 ------
