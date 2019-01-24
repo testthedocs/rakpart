@@ -2,11 +2,17 @@
 Rakpart
 =======
 
-Quay for documentation check Docker images.
+Quay for documentation checks.
 
 TestTheDocs creates opinionated defaults based on our experiences, but we are aware that everyone has different requirements.
 
 You can find further `documentation online <https://rakpart.testthedocs.org>`_.
+
+Dependencies
+============
+
+- `Docker <https://www.docker.com/>`_
+
 
 Contributing
 ============
