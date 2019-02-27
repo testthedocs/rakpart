@@ -1,4 +1,4 @@
-FROM alpine:3.8 as fetcher
+FROM alpine:3.9 as fetcher
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
@@ -11,12 +11,12 @@ RUN apk --no-cache add \
     bash \
     && git clone https://github.com/testthedocs/vale-styles.git
 
-FROM alpine:3.8
+FROM alpine:3.9
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV VALE_VERSION 1.2.7
+ENV VALE_VERSION 1.3.2
 
 COPY --from=fetcher /srv/vale-styles /srv/vale-styles
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh

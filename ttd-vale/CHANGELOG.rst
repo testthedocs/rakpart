@@ -2,6 +2,12 @@
 Changelog
 =========
 
+0.0.8
+=====
+
+- Update Alpine to 3.9 [svx]
+- Update Vale to 1.3.2 [svx]
+
 0.0.6
 =====
 
