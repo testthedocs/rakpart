@@ -20,7 +20,7 @@ SEARCH_PATH="."
 ###
 ### Comma separated list of file extensions to scan for urls
 ###
-EXTENSIONS="md,rst"
+EXTENSIONS=""
 
 
 ###
@@ -32,7 +32,7 @@ URL_REGEX_EXCLUDE="^http(s)?:\\/\\/(127\\.0\\.0\\.1)|(localhost).*$"
 ###
 ### Timeout in seconds to see if a site is alive
 ###
-TIMEOUT=5
+TIMEOUT=10
 
 
 ###
@@ -86,7 +86,7 @@ MY_VERSION="v0.12"
 ###
 CURL_DEFAULTS=""
 CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Cache-Control: max-age=0'"
-CURL_DEFAULTS="${CURL_DEFAULTS} -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36'"
+#CURL_DEFAULTS="${CURL_DEFAULTS} -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36'"
 CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Accept-Language: en-US,en;q=0.8,en-GB;q=0.6,es;q=0.4'"
 CURL_DEFAULTS="${CURL_DEFAULTS} -H 'DNT: 1'"
 CURL_DEFAULTS="${CURL_DEFAULTS} -H 'Referer: https://www.google.com'"

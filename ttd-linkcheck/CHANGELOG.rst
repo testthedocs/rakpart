@@ -2,6 +2,12 @@
 Changelog
 =========
 
+0.0.4
+=====
+
+- Update Alpine to 3.9 [svx]
+- Update to cytopia/linkcheck v0.13 [svx]
+
 0.0.3
 =====
 
