@@ -8,6 +8,7 @@ Features
 ========
 
 Based on: https://github.com/DavidAnson/markdownlint and https://github.com/dcycle/docker-markdown-lint
+
 Another great alternative is: https://github.com/remarkjs/remark-lint
 
 Dependencies
@@ -25,7 +26,7 @@ Pull the image:
    docker pull testthedocs/ttd-mdlint
 
 
-   Usage
+Usage
 =====
 
 .. code-block:: shell
