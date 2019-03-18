@@ -40,6 +40,9 @@ workflows:
   btd:
     jobs:
       - "html"
+          filters:
+            branches:
+              only: master
       - "deploy site":
           requires:
              - "html"
