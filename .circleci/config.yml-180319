@@ -4,7 +4,7 @@ defaults: &defaults
   working_directory: ~/sphinx
 
 jobs:
-  html:
+  "html":
     docker:
       - image: testthedocs/ttd-sphinx
     <<: *defaults
@@ -21,7 +21,7 @@ jobs:
           paths:
             - _build/html
 
-  deploy:
+  "deploy site":
     docker:
       - image: testthedocs/ttd-zipcurl
         #<<: *defaults
@@ -37,15 +37,15 @@ jobs:
 
 workflows:
   version: 2
-  build_and_deploy:
+  btd:
     jobs:
-      - html:
+      - "html"
           filters:
             branches:
               only: master
-      - deploy:
+      - "deploy site":
           requires:
-             - html
+             - "html"
           filters:
             branches:
               only: master
