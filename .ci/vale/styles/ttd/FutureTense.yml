@@ -1,0 +1,11 @@
+---
+extends: existence
+message: "Possible future tense 🚀."
+ignorecase: true
+level: error
+tokens:
+  - will
+  - we'll
+  - you'll
+  - it'll
+  # TODO: regex?
