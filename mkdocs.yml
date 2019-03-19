@@ -1,0 +1,34 @@
+site_name: TestTheDocs - Rakpart
+site_description: 'TestTheDocs - Rakpart - Documentation QA'
+site_author: 'TestTheDocs Community'
+theme:
+  name: 'material'
+  logo: 'images/logo.jpg'
+  favicon: 'images/favicon.png'
+  palette:
+    primary: 'Blue'
+    accent: 'Blue'
+    #  feature:
+    #tabs: true
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+extra_css:
+  - '_static/ttd.css'
+
+# Repository
+#repo_name: testthedocs/mkdocs
+#repo_url: https://github.com/testthedocs/mkdocs
+#edit_uri: ""
+
+# Copyright
+copyright: 'Copyleft &copy; 2019 - TestTheDocs Community'
+
+# Page tree
+nav:
+  - Home: index.md
+  - Contribute: contribute.md
