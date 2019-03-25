@@ -1,26 +1,19 @@
-FROM debian:9-slim
-LABEL maintainer "Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor = "TestTheDocs"
+FROM golang:1.12-alpine AS builder
 
-COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY htmltest.yml /srv/.htmltest.yml
+RUN apk add --no-cache ca-certificates git
 
-RUN builddeps=' \
-    curl \
-    ca-certificates \
-    ' \
-    && useradd --system -s /bin/false ttd \
-    && apt update && apt install -y --no-install-recommends \
-    $builddeps \
-    python-docutils \
-    gosu \
-    && curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/wjdp/htmltest.git /src/htmltest
 
-VOLUME ["/srv/"]
+WORKDIR /src/htmltest
+RUN go mod download
 
-WORKDIR /srv
+# Import the code from the context.
 
-#ENTRYPOINT ["/bin/bash"]
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+RUN CGO_ENABLED=0 go build -installsuffix 'static' -ldflags "-X main.date=`date -u +%Y-%m-%dT%H:%M:%SZ` -X main.version=`git describe --tags`" -o /app .
+
+FROM alpine:3.9 AS final
+
+WORKDIR /bin
+COPY --from=builder /app ./htmltest
+WORKDIR /test
+CMD [ "htmltest", "./"]
