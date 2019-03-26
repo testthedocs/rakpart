@@ -1,10 +1,14 @@
-# Pronovix Internal Documentation #
+title: Rakpart - Documentation Quality Assurance
+description: TestTheDocs Rakpart - A collection of checks which help to improve the quality of technical documentation.
 
-Here you can find all the currently documented processes that we adhere to at Pronovix.
 
-The goal of this repository is to create a detached, commonly agreed basis on how we manage the different components of our project work.
+# Documentation Quality Assurance
 
-Currently, these components with their responsible teams are:
+## About
+
+**Rakpart** is a collection of checks which help to improve the quality of technical documentation.
+
+
 
 ## Play with flex
 <div class="flex-container">
