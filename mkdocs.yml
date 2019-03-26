@@ -7,13 +7,14 @@ theme:
   favicon: 'images/favicon.png'
   palette:
     primary: 'white'
-    accent: 'light blue'
+    accent: 'green'
     #  feature:
     #tabs: true
 
 markdown_extensions:
   - admonition
   - codehilite
+  - meta
   - toc:
       permalink: true
 
@@ -33,4 +34,7 @@ copyright: 'Copyleft &copy; 2019 - TestTheDocs Community'
 nav:
   - Home: index.md
   - Markup Languages: project_management/README.md
-  - Contributing: writing/about.md
+  - Contributing:
+    - Code of Conduct: code-of-conduct.md
+    - Commit Guidelines: commit-guidelines.md
+    - Docker Guidelines: docker.md

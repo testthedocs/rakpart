@@ -47,3 +47,7 @@ check-toctree: ## Checks for for multiple "number entries" in toctrees
 .PHONY: new-check
 new-check: ## Creates boilperplate of a new check using narvin
 	@docker run -it -v "${PWD}":/srv/data testthedocs/marvin create-rakpart-check
+
+.PHONY: serve
+serve:
+	@docker run -it --rm -p 8000:8000 -v "${PWD}":/docs testthedocs/ttd-mkdocs:latest serve

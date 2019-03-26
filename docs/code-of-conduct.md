@@ -1,18 +1,14 @@
-===============
-Code Of Conduct
-===============
+title: Code of Conduct
+description: TestTheDocs - Code of Conduct
 
-.. admonition:: Abstract
+# Code of Conduct
 
-   All you need to know about our CoC.
+## Abstract
 
-   Based on the `Code of Conduct <https://www.writethedocs.org/code-of-conduct/>`_
-   of the `Write the Docs Community <https://www.writethedocs.org/>`_.
+All you need to know about our CoC.
 
-.. contents::
-   :local:
-   :depth: 1
-   :backlinks: none
+Based on the [Code of Conduct](https://www.writethedocs.org/code-of-conduct)
+of the [Write the Docs Community](https://www.writethedocs.org/).
 
 TestTheDocs is a global community who shares information, discuss ideas, and work together to improve the art and science of documentation.
 
@@ -27,14 +23,12 @@ Rather, take it in the spirit in which it is intended.
 
 It is a guide to make it easier to enrich all of us and the technical communities in which we participate, and which we represent.
 
-The Principles
-==============
+## Principles
 
 - **Be friendly and welcoming.** We strive to be a community that welcomes and supports people of all backgrounds and identities.
   This includes, but is not limited to, members of any race, ethnicity, culture,
   national origin, color, immigration status, social and economic class, educational level,
   sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.
-
 
 - **Be respectful.** Not all of us will agree all the time, but disagreement is no excuse for poor behavior and poor manners.
   We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack.
@@ -57,12 +51,11 @@ This includes, but is not limited to:
 - Repeated harassment of others.
   In general, if someone asks you to stop, then stop.
 
-Where Does The Code Of Conduct Apply
-====================================
+## Where does the Code Of Conduct apply
 
-This code of conduct applies to all spaces managed by Write the Docs.
+This code of conduct applies to all spaces managed by TestTheDocs.
 
- This includes:
+This includes:
 
 - Conferences (including social events and peripheral activities)
 - Unconferences and sprints
@@ -78,10 +71,7 @@ This code of conduct applies to all spaces managed by Write the Docs.
 
 In addition, violations of this code outside these spaces may affect a person's ability to participate within them.
 
-.. _coc-sponsors:
-
-Sponsors, Affiliates, And Exhibitors
-====================================
+## Sponsors, Affiliates, and Exhibitors
 
 When you sponsor a TestTheDocs event, we welcome you as a member of our community, and we expect you to be respectful to the community you operate within.
 
@@ -96,8 +86,7 @@ or similar actions towards community members.
 
 In case of violations, sponsors might be sanctioned and expelled from the event or activity with no return of the sponsorship contribution.
 
-What To Do In Case Of Violations
-================================
+## What to do in case of violations
 
 If you believe that someone is violating the code of conduct during one of our events, please contact a member of the event staff immediately.
 Event staff can be identified by t-shirts/special badges.
@@ -108,8 +97,7 @@ All reports will be kept confidential.
 In some cases a public statement might be required (for example in a CoC transparency report following conferences),
 but these reports are anonymized and do not include any personally identifying information.
 
-Thanks
-======
+## Thanks
 
-This code of conduct is largely based on the `Django Project Code of Conduct <https://www.djangoproject.com/conduct/>`_,
+This code of conduct is largely based on the [Django Project Code of Conduct](https://www.djangoproject.com/conduct),
 which in turn credits the original text of the Speak Up! project, inspired in its turn by the Fedora Project, as well as the Python Mentorship Project and many others.
