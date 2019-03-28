@@ -1,0 +1,57 @@
+title: Rakpart - Documentation Quality Assurance - TestTheDocs
+description: TestTheDocs Rakpart - A collection of checks which help to improve the quality of technical documentation.
+
+
+# Documentation Quality Assurance
+
+
+**Rakpart** is a collection of checks which help to improve the quality of technical documentation.
+
+Explain better what is is and why it is called Rakpart.
+
+---
+
+![Header picture](_static/ci-graph-round.png)
+
+
+Run the locally as container, as githook or with your editor
+
+## Overview
+
+### Markdown
+
+### reStructuredText
+
+### Others
+
+
+
+## Dependencies
+
+## Quick Start
+<div class="flex-container">
+  <div>
+  <h1 class="box">Markdown</h1>
+  All about Markup Languages
+  </div>
+  <div><h1 class="box">reStructuredText</h1></div>
+</div>
+<div class="flex-container">
+  <div>
+  <h1 class="box">Other</h1>
+  Things like linkcheck
+  </div>
+  <div><h1 class="box">Editorial Style Guidelines</h1></div>
+  </div>
+<div class="flex-container">
+  <div>
+  <h1 class="box">Continuous Integration</h1>
+  How to use *Rakpart* checks with *CI*.
+  <ul>
+    <li>[Travis](exampple.io)</li>
+    <li>[CircleCI](example.io)</li>
+    <li>Milk</li>
+  </ul>
+  </div>
+  <div><h1 class="box">Contributing</h1></div>
+</div>

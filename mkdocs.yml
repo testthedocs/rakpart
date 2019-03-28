@@ -21,6 +21,14 @@ markdown_extensions:
 extra_css:
   - '_static/ttd.css'
 
+# Customization
+extra:
+  social:
+    - type: github-alt
+      link: https://github.com/testthedocs
+    - type: twitter
+      link: https://twitter.com/testthedocs
+
 # Repository
 repo_name: testthedocs/rakpart
 repo_url: https://github.com/testthedocs/rakpartvale
@@ -33,8 +41,12 @@ copyright: 'Copyleft &copy; 2019 - TestTheDocs Community'
 # Page tree
 nav:
   - Home: index.md
-  - Markup Languages: project_management/README.md
+  - Markdown: commit-guidelines.md
+  - reStructuredText: commit-guidelines.md
+  - Editorial Style Guidelines: commit-guidelines.md
+  - Continuous Integration: continuous-integration.md
   - Contributing:
+    - Overview: contribute.md
     - Code of Conduct: code-of-conduct.md
     - Commit Guidelines: commit-guidelines.md
     - Docker Guidelines: docker.md

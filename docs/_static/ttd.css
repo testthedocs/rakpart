@@ -1,0 +1,73 @@
+.roundedCorner
+{
+	width:350px;height:200px;
+	border: solid 1px #555;
+        padding: 20px;
+	background-color: #eed;
+	box-shadow: 3px 6px 2px;
+	border-radius:25px;
+}
+
+.example-two
+{
+  border-radius: 10px;
+  padding: 20px;
+  border: 3px solid #BADA55;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  /*background-color: #444;*/
+  /*border: 2px solid #e7ecf2;*/
+  color: #fff;
+  /*border-radius: 5px;*/
+  border-bottom-style: solid;
+  border-bottom-color: #e7ecf2;
+
+  padding: 20px;
+  font-size: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: ". . ." ". . .";
+  grid-gap: 10px;
+  background-color: #fff;
+}
+
+.flex-container {
+  display: flex;
+  background-color: #e7ecf2;
+  /*border-radius: 10px;*/
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  /*font-size: 30px;*/
+  border-radius: 10px;
+  background-color: #ffff;
+  box-shadow: 1px 1px 1px;
+  width:50%;
+}
+
+h1.intro {
+  border-left: 6px solid #ccc !important;
+  background-color: #444;
+}
+
+hr {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
