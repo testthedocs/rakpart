@@ -41,7 +41,8 @@ copyright: 'Copyleft &copy; 2019 - TestTheDocs Community'
 # Page tree
 nav:
   - Home: index.md
-  - Markdown: commit-guidelines.md
+  - Markdown:
+    - Remark Lint: ttd-remark.md
   - reStructuredText: commit-guidelines.md
   - Editorial Style Guidelines: commit-guidelines.md
   - Continuous Integration: continuous-integration.md
