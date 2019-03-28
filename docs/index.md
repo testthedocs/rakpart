@@ -20,11 +20,33 @@ Run the locally as container, as githook or with your editor
 
 ### Markdown
 
+All checks which have to do with [Markdown](linktomd.io).
+
+- Markdown Lint
+- Remark Lint
+
 ### reStructuredText
+
+All links for [rest](rst.io)
+
+- Doc8
+- Toctree
+
+### Editorial Style Guidelines
+
+- Vale
+- Textlint
 
 ### Others
 
+- Linkcheck
+- HTML Test
+- Tab
+- Trailing Space
 
+### CI
+
+How to use *Rakpart* with CI.
 
 ## Dependencies
 
