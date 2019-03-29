@@ -1,24 +1,14 @@
-FROM alpine:3.9
-LABEL maintainer "Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor = "TestTheDocs"
+# Move to mutilstage build
+# because there is no standard libc in alpine
+# https://github.com/wjdp/htmltest/blob/master/Dockerfile
 
-COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY htmltest.yml /srv/.htmltest.yml
+ARG GO_VERSION=1.11
+ARG TARGET=alpine:3.9
 
-RUN set -x \
-    && adduser -s /bin/false -D -H ttd \
-    && apk --no-cache add \
-        tini \
-        su-exec \
-        bash \
-    && apk add --no-cache --virtual .build-deps \
-        curl \
-    && curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin \
-    && apk del .build-deps
+FROM golang:${GO_VERSION}-alpine AS builder
 
-VOLUME ["/srv/"]
-
-WORKDIR /srv
-
-#ENTRYPOINT ["/bin/bash"]
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+RUN apk add --no-cache ca-certificates git
+RUN git clone https://github.com/wjdp/htmltest.git
+RUN cd htmltest \
+    && go mod download \
+    && CGO_ENABLED=0 go build -installsuffix 'static' -ldflags "-X main.date=`date -u +%Y-%m-%dT%H:%M:%SZ` -X main.version=`git describe --tags`" -o /app .
