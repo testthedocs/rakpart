@@ -1,20 +1,22 @@
-FROM alpine:3.9
+FROM debian:9-slim
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY htmltest.yml /srv/.htmltest.yml
 
-RUN set -x \
-    && adduser -s /bin/false -D -H ttd \
-    && apk --no-cache add \
-        tini \
-        su-exec \
-        bash \
-    && apk add --no-cache --virtual .build-deps \
-        curl \
+RUN builddeps=' \
+    curl \
+    ca-certificates \
+    ' \
+    && useradd --system -s /bin/false ttd \
+    && apt update && apt install -y --no-install-recommends \
+    $builddeps \
+    python-docutils \
+    gosu \
     && curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin \
-    && apk del .build-deps
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 VOLUME ["/srv/"]
 
