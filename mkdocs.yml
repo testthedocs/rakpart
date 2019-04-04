@@ -49,8 +49,10 @@ nav:
     - Toctree Check (Sphinx): ttd-toctree.md
   - Editorial Style Guidelines:
     - Textlint: ttd-textlint.md
+  - Additional checks:
+    - Tab Check: ttd-tab.md
   - Continuous Integration: continuous-integration.md
-  - Git workflow: commit-guidelines.md
+  - Git Workflow: commit-guidelines.md
   - Contributing:
     - Overview: contribute.md
     - Code of Conduct: code-of-conduct.md

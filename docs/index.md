@@ -43,7 +43,7 @@ At present **Rakpart** has two checks for Markdown;
 - Vale
 - Textlint
 
-### Additional checks
+### Additional Checks
 
 - Linkcheck
 - HTML Test
@@ -55,7 +55,7 @@ At present **Rakpart** has two checks for Markdown;
 How to use **Rakpart** with CI/CD (Continuous Integration and Continuous Delivery).
 
 
-### Git workflow
+### Git Workflow
 
 All about Git hooks, etc, etc
 
