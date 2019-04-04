@@ -43,6 +43,7 @@ nav:
   - Home: index.md
   - Markdown:
     - Remark Lint: ttd-remark.md
+    - Markdown Lint: ttd-mdlint.md
   - reStructuredText: commit-guidelines.md
   - Editorial Style Guidelines: commit-guidelines.md
   - Continuous Integration: continuous-integration.md
