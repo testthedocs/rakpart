@@ -4,7 +4,7 @@ description: TestTheDocs Rakpart - A collection of checks which help to improve 
 
 # Documentation Quality Assurance
 
-Building, maintaining and continually improving documentation by doing *Docs As Code* the DocOps way.
+Building, maintaining and continually improving documentation by doing *Docs As Code* the *DocOps* way.
 
 **Rakpart** is a collection of checks which can help to improve the quality of technical documentation.
 
@@ -22,10 +22,12 @@ Running the checks a part of your Git Workflow (Git hooks for example) is an exc
 
 ### Markdown
 
-All checks which have to do with [Markdown](linktomd.io).
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight [markup language](https://en.wikipedia.org/wiki/Markup_language) with plain text formatting syntax.
 
-- Markdown Lint
-- Remark Lint
+At present **Rakpart** includes two checks for Markdown;
+
+- [Markdown Lint](https://rakpart.testthedocs/ttd-mdlint) (Common Markdown code style linter)
+- [Remark Lint](https://rakpart.testthedocs/ttd-remark) (Markdown code style linter for [CommonMark](https://commonmark.org))
 
 ### reStructuredText
 
