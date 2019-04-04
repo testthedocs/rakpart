@@ -3,7 +3,7 @@ description: Rakpart - reStructuredText (reST) code style linter.
 
 # TTD Doc8
 
-![Remark-lint picture](_static/doc8-pic)
+![Doc8 picture](_static/doc8-pic)
 
 ## About
 

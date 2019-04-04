@@ -46,6 +46,7 @@ nav:
     - Markdown Lint: ttd-mdlint.md
   - reStructuredText:
     - Doc8: ttd-doc8.md
+    - Toctree Check (Sphinx): ttd-toctree.md
   - Editorial Style Guidelines: commit-guidelines.md
   - Continuous Integration: continuous-integration.md
   - Git workflow: commit-guidelines.md
