@@ -26,26 +26,24 @@ Running the checks a part of your Git Workflow (Git hooks for example) is an exc
 
 At present **Rakpart** has two checks for Markdown;
 
-- [Markdown Lint](https://rakpart.testthedocs/ttd-mdlint) (Common Markdown code style linter)
-- [Remark Lint](https://rakpart.testthedocs/ttd-remark) (Markdown code style linter for [CommonMark](https://commonmark.org))
+- [Markdown Lint](https://rakpart.testthedocs.org/ttd-mdlint) (Common Markdown code style linter)
+- [Remark Lint](https://rakpart.testthedocs.org/ttd-remark) (Markdown code style linter for [CommonMark](https://commonmark.org))
 
 ### reStructuredText
 
 [reStructuredText](http://docutils.sourceforge.net/rst.html) is an easy-to-read, what-you-see-is-what-you-get plain text markup syntax and parser system.
 
-**Rakpart**
+**Rakpart** has two checks which are reStructuredText related;
 
-All links for [rest](rst.io)
-
-- Doc8
-- Toctree
+- [Doc8](https://rakpart.testthedocs.org/ttd-doc8) (reStructuredText (reST) code style linter)
+- [Toctree Check](https://rakpart.testthedocs/ttd-toctree) (Toctree validation for [Sphinx](http://www.sphinx-doc.org/en/master/) based documentation)
 
 ### Editorial Style Guidelines
 
 - Vale
 - Textlint
 
-### Others
+### Additional
 
 - Linkcheck
 - HTML Test
@@ -54,7 +52,7 @@ All links for [rest](rst.io)
 
 ### CI
 
-How to use *Rakpart* with CI.
+How to use **Rakpart** with CI/CD (Continuous Integration and Continuous Delivery).
 
 
 ### Git workflow
