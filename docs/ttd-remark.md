@@ -13,7 +13,7 @@ Based on [remark-lint](https://github.com/remarkjs/remark-lint) and [zemanlx/rem
 
 ## Usage
 
-Run *remark-lint* from in your docs directory:
+Run `remark-lint` from in your docs directory:
 
 ```shell
 docker run --rm -i -v $PWD:/lint/input:ro testthedocs/ttd-remark .
