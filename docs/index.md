@@ -1,22 +1,24 @@
 title: Rakpart - Documentation Quality Assurance - TestTheDocs
-description: TestTheDocs Rakpart - A collection of checks which help to improve the quality of technical documentation.
+description: TestTheDocs Rakpart - A collection of checks which help to improve the quality of technical documentation the DocOps way.
 
 
 # Documentation Quality Assurance
 
+Building, maintaining and continually improving documentation by doing *Docs As Code* the DocOps way.
 
-**Rakpart** is a collection of checks which help to improve the quality of technical documentation.
-
-Explain better what is is and why it is called Rakpart.
+**Rakpart** is a collection of checks which can help to improve the quality of technical documentation.
 
 ---
 
 ![Header picture](_static/ci-graph-round.png)
 
+## Outline
 
-Run the locally as container, as githook or with your editor
+All **Rakpart** checks are designed with CI/CD (Continuous Integration and Continuous Delivery) pipelines in mind (*Docs As Code*).
 
-## Overview
+Although all checks work local, too.
+
+Running the checks a part of your Git Workflow (Git hooks for example) is an excellent way to get started!
 
 ### Markdown
 
@@ -47,6 +49,11 @@ All links for [rest](rst.io)
 ### CI
 
 How to use *Rakpart* with CI.
+
+
+### Git workflow
+
+All about Git hooks, etc, etc
 
 ## Dependencies
 

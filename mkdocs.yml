@@ -46,6 +46,7 @@ nav:
   - reStructuredText: commit-guidelines.md
   - Editorial Style Guidelines: commit-guidelines.md
   - Continuous Integration: continuous-integration.md
+  - Git workflow: commit-guidelines.md
   - Contributing:
     - Overview: contribute.md
     - Code of Conduct: code-of-conduct.md
