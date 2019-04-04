@@ -43,14 +43,14 @@ At present **Rakpart** has two checks for Markdown;
 - Vale
 - Textlint
 
-### Additional
+### Additional checks
 
 - Linkcheck
 - HTML Test
 - Tab
 - Trailing Space
 
-### CI
+### CI/CD
 
 How to use **Rakpart** with CI/CD (Continuous Integration and Continuous Delivery).
 
