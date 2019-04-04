@@ -13,9 +13,9 @@ Based on [markdownlint](https://github.com/DavidAnson/markdownlint) and [docker-
 
 You can change the configuration, by adjusting the file named `config.json`, currently ignored:
 
-- [MD013](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013)
-- [MD033](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033)
-- [MD044](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md044)
+- [MD013](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013) (Line length)
+- [MD033](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033) (Inline HTML)
+- [MD044](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md044) (Names should have the correct capitalization)
 
 Please see the [list](https://github.com/DavidAnson/markdownlint#rules--aliases) of all rules.
 
