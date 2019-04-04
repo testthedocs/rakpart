@@ -24,12 +24,16 @@ Running the checks a part of your Git Workflow (Git hooks for example) is an exc
 
 [Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight [markup language](https://en.wikipedia.org/wiki/Markup_language) with plain text formatting syntax.
 
-At present **Rakpart** includes two checks for Markdown;
+At present **Rakpart** has two checks for Markdown;
 
 - [Markdown Lint](https://rakpart.testthedocs/ttd-mdlint) (Common Markdown code style linter)
 - [Remark Lint](https://rakpart.testthedocs/ttd-remark) (Markdown code style linter for [CommonMark](https://commonmark.org))
 
 ### reStructuredText
+
+[reStructuredText](http://docutils.sourceforge.net/rst.html) is an easy-to-read, what-you-see-is-what-you-get plain text markup syntax and parser system.
+
+**Rakpart**
 
 All links for [rest](rst.io)
 

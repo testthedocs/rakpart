@@ -44,7 +44,8 @@ nav:
   - Markdown:
     - Remark Lint: ttd-remark.md
     - Markdown Lint: ttd-mdlint.md
-  - reStructuredText: commit-guidelines.md
+  - reStructuredText:
+    - Doc8: ttd-doc8.md
   - Editorial Style Guidelines: commit-guidelines.md
   - Continuous Integration: continuous-integration.md
   - Git workflow: commit-guidelines.md

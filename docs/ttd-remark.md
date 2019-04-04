@@ -29,6 +29,6 @@ plugins:
   preset-lint-recommended:
   validate-links:
 ```
-## Source Code
+## Source
 
 The code of *ttd-remark* is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-remark).

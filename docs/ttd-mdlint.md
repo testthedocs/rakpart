@@ -27,6 +27,6 @@ You can change the configuration, by adjusting the file named `config.json`, cur
 
 Please see the [list](https://github.com/DavidAnson/markdownlint#rules--aliases) of all rules.
 
-## Source Code
+## Source
 
 The code of `ttd-mdlint` is located on [GitHub](https://github.com/testthedocs/rakpart/tree/master/ttd-mdlint).
