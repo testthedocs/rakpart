@@ -52,9 +52,9 @@ nav:
   - Additional Checks:
     - Tab Check: ttd-tab.md
   - Continuous Integration: continuous-integration.md
-  - Git Workflow: commit-guidelines.md
   - Contributing:
     - Overview: contribute.md
     - Code of Conduct: code-of-conduct.md
+    - Git Workflow: commit-guidelines.md
     - Commit Guidelines: commit-guidelines.md
     - Docker Guidelines: docker.md
