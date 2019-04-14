@@ -9,14 +9,16 @@ RUN apk --no-cache add \
     git \
     ca-certificates \
     bash \
-    && git clone https://github.com/testthedocs/vale-styles.git
+    # GET EXAMPLE STYLES ONLY
 
 FROM alpine:3.9
 
-LABEL maintainer "Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor = "TestTheDocs"
+LABEL name="ttd-vale" \
+    description="Spelling, grammar, style and readability linter" \
+    maintainer="Sven <sven@testthedocs.org>" \
+    org.label-schema.vendor ="TestTheDocs"
 
-ENV VALE_VERSION 1.3.2
+ENV VALE_VERSION 1.4.0
 
 COPY --from=fetcher /srv/vale-styles /srv/vale-styles
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
@@ -25,14 +27,15 @@ COPY .vale.ini /srv/.vale.ini
 RUN adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
     tini \
-    su-exec \
     bash \
     && wget -O vale.tgz https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz \
     && tar zxvf vale.tgz \
+    # DO ABOVE IN ONE COMMAND
     && mv vale /usr/local/bin/vale \
     && rm LICENSE \
     && rm README.md
 
+USER ttd
 WORKDIR /srv
 VOLUME /srv
 
