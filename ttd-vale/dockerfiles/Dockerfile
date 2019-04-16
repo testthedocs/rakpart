@@ -16,7 +16,7 @@ FROM alpine:3.9
 LABEL name="ttd-vale" \
     description="Spelling, grammar, style and readability linter" \
     maintainer="Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor ="TestTheDocs"
+    org.label-schema.vendor="TestTheDocs"
 
 ENV VALE_VERSION 1.4.0
 
