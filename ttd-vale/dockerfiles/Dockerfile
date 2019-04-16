@@ -9,7 +9,7 @@ RUN apk --no-cache add \
     git \
     ca-certificates \
     bash \
-    # GET EXAMPLE STYLES ONLY
+    && git clone https://github.com/testthedocs/vale-styles.git
 
 FROM alpine:3.9
 
@@ -20,7 +20,7 @@ LABEL name="ttd-vale" \
 
 ENV VALE_VERSION 1.4.0
 
-COPY --from=fetcher /srv/vale-styles /srv/vale-styles
+COPY --from=fetcher /srv/vale-styles/ttd-light /srv/vale-styles/ttd-light
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY .vale.ini /srv/.vale.ini
 
