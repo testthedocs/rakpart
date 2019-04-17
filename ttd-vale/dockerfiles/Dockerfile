@@ -1,15 +1,24 @@
-FROM alpine:3.9 as fetcher
+FROM golang:1.12-alpine3.9 as builder
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-WORKDIR /srv
-
 RUN apk --no-cache add \
     git \
-    ca-certificates \
-    bash \
-    && git clone https://github.com/testthedocs/vale-styles.git
+    musl-dev \
+    gcc \
+    ca-certificates
+
+WORKDIR /srv
+
+RUN git clone https://github.com/testthedocs/vale-styles.git \
+    && git clone https://github.com/errata-ai/vale \
+    && go get github.com/urfave/cli \
+    && go get github.com/errata-ai/vale
+
+WORKDIR /srv/vale
+
+RUN CGO_ENABLED=0 GOOS=linux go build ${LDFLAGS} -o bin/vale
 
 FROM alpine:3.9
 
@@ -18,12 +27,12 @@ LABEL name="ttd-vale" \
     maintainer="Sven <sven@testthedocs.org>" \
     org.label-schema.vendor="TestTheDocs"
 
-ENV VALE_VERSION 1.4.0
 
-COPY --from=fetcher /srv/vale-styles/ttd-light /srv/vale-styles/ttd-light
+COPY --from=builder /srv/vale-styles/ttd-light /srv/vale-styles/ttd-light
+COPY --from=builder /srv/vale/bin/vale /usr/local/bin/vale
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY .vale.ini /srv/.vale.ini
-COPY vale /usr/local/bin/vale
+
 
 RUN adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
