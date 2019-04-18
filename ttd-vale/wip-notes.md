@@ -26,4 +26,9 @@ it needs libgcc.so and libgcc_s.so
 After that is done we will copy the bin.
 
 By doing so our images will get smaller and we have more control!
- Further we can adjust our entrypoint script, we do not need su-exec anymore
+ Further we can adjust our entrypoint script, we do not need su-exec anymore:
+
+ - Create dir for checks
+ - Chmod dir for checks
+ - Switch to ttd user
+ - Use vale as entrypoint
