@@ -8,7 +8,7 @@ Style Guide
 
 Bash
 ====
-- Scripts are formated with `shfmt <https://github.com/mvdan/sh>`_, following `Google's Style Guide <https://google.github.io/styleguide/shell.xml>`_, ``shfmt -i 2 -ci``.
+- Scripts are formated with `shfmt <https://github.com/mvdan/sh>`_, `shfmt as docker <https://github.com/tmknom/shfmt>`_, following `Google's Style Guide <https://google.github.io/styleguide/shell.xml>`_, ``shfmt -i 2 -ci``.
 - Make sure to test against `shellcheck <https://www.shellcheck.net/>`_.
 - Use ``set -euo pipefail``, see `Safer bash scripts <https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/>`_.
 - Scripts should fail on errors (``exit 1``)
